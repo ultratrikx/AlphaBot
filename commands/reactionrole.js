@@ -10,6 +10,7 @@ module.exports = {
         const adminblackRole = message.guild.roles.cache.find(role => role.name === "adminblack");
         const reddeadRole = message.guild.roles.cache.find(role => role.name === "red-dead");
         const serotoninpinkRole = message.guild.roles.cache.find(role => role.name === "serotoninpink");
+        const pollUpdatesRole = message.guild.roles.cache.find(role => role.name === "Poll Updates")
 
         const grebnEmoji = '🟩';
         const bluesEmoji = '🟦';
@@ -18,16 +19,18 @@ module.exports = {
         const adminblackEmoji = '⚫';
         const reddeadEmoji = '🟥';
         const serotoninpinkEmoji = '🟣'
+        const pollUpdatesEmoji = '❔';
 
         let embed = new Discord.MessageEmbed()
             .setColor('#e42643')
-            .setTitle('Choose a colour to display in the server!!')
+            .setTitle('Add On Roles by Yourself!!')
             .setDescription('You can always change!!\n\n'
                 + `${grebnEmoji} for shrek colour\n`
                 + `${reddeadEmoji} for red colour\n`
                 + `${bluesEmoji} for blue colour\n`
                 + `${prupleEmoji} for pruple colour\n`
-                + `${blackEmoji} for black colour`);
+                + `${blackEmoji} for black colour\n`
+                + `${pollUpdatesEmoji} to be pinged for polls`);
 
           let messageEmbed = await message.channel.send(embed);
           messageEmbed.react(grebnEmoji);
@@ -35,6 +38,7 @@ module.exports = {
           messageEmbed.react(bluesEmoji);
           messageEmbed.react(prupleEmoji);
           messageEmbed.react(blackEmoji);
+          messageEmbed.react(pollUpdatesEmoji);
 
           client.on('messageReactionAdd', async (reaction, user) => {
               if(reaction.message.partial) await reaction.message.fetch();
@@ -87,7 +91,10 @@ module.exports = {
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(reddeadRole);
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(adminblackRole);
                     await reaction.message.guild.members.cache.get(user.id).roles.remove(serotoninpinkRole);
-                  }            
+                  }  
+                  if (reaction.emoji.name == pollUpdatesEmoji){
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(pollUpdatesRole);
+                  }          
               } else {
                   return;
               }
@@ -120,6 +127,9 @@ module.exports = {
                 }
                 if (reaction.emoji.name == serotoninpinkEmoji){
                   await reaction.message.guild.members.cache.get(user.id).roles.remove(serotoninpinkRole);
+                }
+                if (reaction.emoji.name == pollUpdatesEmoji){
+                  await reaction.message.guild.members.cache.get(user.id).roles.remove(pollUpdatesRole);
                 }
             }
           });
