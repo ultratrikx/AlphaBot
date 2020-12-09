@@ -10,7 +10,9 @@ module.exports = {
         const adminblackRole = message.guild.roles.cache.find(role => role.name === "adminblack");
         const reddeadRole = message.guild.roles.cache.find(role => role.name === "red-dead");
         const serotoninpinkRole = message.guild.roles.cache.find(role => role.name === "serotoninpink");
-        const pollUpdatesRole = message.guild.roles.cache.find(role => role.name === "Poll Updates")
+        const pollUpdatesRole = message.guild.roles.cache.find(role => role.name === "Poll Updates");
+
+
 
         const grebnEmoji = '🟩';
         const bluesEmoji = '🟦';

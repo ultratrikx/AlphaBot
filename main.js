@@ -67,7 +67,10 @@ client.on('message', message =>{
         client.commands.get('boostercolour').execute(message, args);
 
     }else if(command == 'reactionrole'){
-        client.commands.get('reactionrole').execute(message, args, Discord, client)
+        client.commands.get('reactionrole').execute(message, args, Discord, client);
+
+    }else if(command == 'pronounroles'){
+        client.commands.get('pronounroles').execute(message, args, Discord, client)
     }
 });
 
