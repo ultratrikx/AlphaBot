@@ -8,7 +8,7 @@ module.exports = {
         .setAuthor('Alpha Bot#0038 (aka baby kata 2)', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
         .setDescription('Here’s the list of commands!\n\n'
             + '**Normal Commands**\n'
-            + 'type `.ping` to get rudly insulted\n'
+            + 'type `.ping` to get rudely insulted\n'
             + 'type `.hi` to get haunted\n'
             + 'type `.babykata2` for meme\n'
             + '_ _'
