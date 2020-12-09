@@ -19,15 +19,15 @@ module.exports = {
         const xexemEmoji = '⚪'
 
         let embed = new Discord.MessageEmbed()
-            .setColor('#e42643')
+            .setColor('##ffb8d4')
             .setTitle('Add on Pronoun Roles!!')
             .setDescription('I hope this goes without saying but don`t abuse these\n\n'
-                + `${hetheyEmoji} for those who would like to be called with the pronouns he/they\n`
-                + `${shetheyEmoji} for those who would like to be called with the pronouns she/they\n`
-                + `${hehimEmoji} for those who would like to be called with the pronouns he/him\n`
-                + `${sheherEmoji} for those who would like to be called with the pronouns she/her\n`
-                + `${theythemEmoji} for those who would like to be called with the pronouns they/them\n`
-                + `${xexemEmoji} for those who would like to be called with the pronouns xe/xem`);
+                + `${hetheyEmoji} for he/they pronouns\n`
+                + `${shetheyEmoji} for she/they pronouns\n`
+                + `${hehimEmoji} for he/him pronouns\n`
+                + `${sheherEmoji} for she/her pronouns\n`
+                + `${theythemEmoji} for they/them pronouns\n`
+                + `${xexemEmoji} for xe/xem pronouns`);
 
           let messageEmbed = await message.channel.send(embed);
           messageEmbed.react(hetheyEmoji);
