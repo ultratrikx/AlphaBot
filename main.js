@@ -75,4 +75,5 @@ client.on('message', message =>{
 });
 
 
-client.login('NzAyNTE0Nzg4MzQwODU4ODky.XqBJ4Q.sm1IH_kt4w4tEIZ7nwcxwwhJnYo');
+client.login(processs.env.DJSALPHA_TOKEN);
+NzAyNTE0Nzg4MzQwODU4ODky.XqBJ4Q.sm1IH_kt4w4tEIZ7nwcxwwhJnYo
