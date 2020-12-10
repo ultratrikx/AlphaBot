@@ -16,7 +16,7 @@ for (const file of commandFiles){
 }
 
 client.once('ready', () => {
-    console.log('ColourRoles is online!');
+    console.log('AlphaBot is online!');
     client.user.setPresence({
         status: "dnd",  // You can show online, idle... Do not disturb is dnd
         
@@ -70,7 +70,13 @@ client.on('message', message =>{
         client.commands.get('reactionrole').execute(message, args, Discord, client);
 
     }else if(command == 'pronounroles'){
-        client.commands.get('pronounroles').execute(message, args, Discord, client)
+        client.commands.get('pronounroles').execute(message, args, Discord, client);
+
+    }else if(command == 'github'){
+        client.commands.get('github').execute(message, args, Discord, client);
+
+    }else if(command == 'rickroll'){
+        client.commands.get('rickroll').execute(message, args, Discord, client)
     }
 });
 
