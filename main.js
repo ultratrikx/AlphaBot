@@ -72,11 +72,6 @@ client.on('message', message =>{
     }else if(command == 'pronounroles'){
         client.commands.get('pronounroles').execute(message, args, Discord, client);
 
-    }else if(command == 'github'){
-        client.commands.get('github').execute(message, args, Discord, client);
-
-    }else if(command == 'rickroll'){
-        client.commands.get('rickroll').execute(message, args, Discord, client)
     }
 });
 
