@@ -21,7 +21,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor('##ffb8d4')
             .setTitle('Add on Pronoun Roles!!')
-            .setDescription('I hope this goes without saying but don`t abuse these\n\n'
+            .setDescription(`I hope this goes without saying but don't abuse these\n\n`
                 + `${hetheyEmoji} for he/they pronouns\n`
                 + `${shetheyEmoji} for she/they pronouns\n`
                 + `${hehimEmoji} for he/him pronouns\n`

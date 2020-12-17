@@ -21,8 +21,8 @@ client.once('ready', () => {
         status: "dnd",  // You can show online, idle... Do not disturb is dnd
         
         activity: {
-            name: "baby kata 2",  // The message shown
-            type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
+            name: "for the break",  // The message shown
+            type: "WAITING" // PLAYING, WATCHING, LISTENING, STREAMING,
         }
     });
 });
