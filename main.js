@@ -17,15 +17,22 @@ for (const file of commandFiles){
 
 client.once('ready', () => {
     console.log('AlphaBot is online!');
-    client.user.setPresence({
-        status: "dnd",  // You can show online, idle... Do not disturb is dnd
+    //client.user.setPresence({
+        //status: "dnd",  // You can show online, idle... Do not disturb is dnd
         
-        activity: {
-            name: "for the break",  // The message shown
-            type: "WAITING" // PLAYING, WATCHING, LISTENING, STREAMING,
-        }
+        //activity: {
+            //name: "nothing",  // The message shown
+            //type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
+        //}
     });
-});
+//});
+
+client.on('guildMemberAdd', guildMember =>{
+    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
+
+    guildMember.roles.add(welcomeRole);
+})
+
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot)return;
@@ -72,6 +79,8 @@ client.on('message', message =>{
     }else if(command == 'pronounroles'){
         client.commands.get('pronounroles').execute(message, args, Discord, client);
 
+    }else if (command == 'clear'){
+        client.commands.get('clear').execute(message,args)
     }
 });
 
