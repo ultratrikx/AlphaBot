@@ -6,6 +6,8 @@ const prefix = '.';
 
 const fs = require ('fs');
 
+const { token } = require('./config.json');
+
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
@@ -98,8 +100,17 @@ client.on('message', message =>{
     }else if(command == 'unmute'){
         client.commands.get('unmute').execute(message, args);
 
+    }else if(command == 'weather'){
+        client.commands.get('weather').execute(client, message, args);
+
+    }else if(command == 'covid'){
+        client.commands.get('covid').execute(client, message, args);
+
+    }else if(command == 'math'){
+        client.commands.get('math').execute(client, message, args);
+
     }
 });
 
 
-client.login("NzAyNTE0Nzg4MzQwODU4ODky.XqBJ4Q.sm1IH_kt4w4tEIZ7nwcxwwhJnYo")
+client.login(token)
