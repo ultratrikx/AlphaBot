@@ -11,6 +11,8 @@ module.exports = {
             + 'type `.ping` to get rudely insulted\n'
             + 'type `.hi` to get haunted\n'
             + 'type `.babykata2` for meme\n\n'
+            + '**Admin Commands**\n'
+            + 'type `.clear [number]` to clear messages '
             + '**Colour Role Commands**\n'
             + 'type `.redrole` to get a red colour on your name\n'
             + 'type `.blues` to get the blue colour on you name\n'

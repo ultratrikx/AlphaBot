@@ -80,7 +80,11 @@ client.on('message', message =>{
         client.commands.get('pronounroles').execute(message, args, Discord, client);
 
     }else if (command == 'clear'){
-        client.commands.get('clear').execute(message,args)
+        client.commands.get('clear').execute(message,args);
+
+    }else if(command == 'botinfo'){
+        client.commands.get('botinfo').execute(message, args, Discord);
+
     }
 });
 

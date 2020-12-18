@@ -1,14 +1,14 @@
 {
-  "name": "alphabot",
-  "version": "1.0.1",
-  "description": "official release of the alphabot",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "ultratrikx#1056",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^12.5.1"
+    "name": "alphabot",
+    "version": "1.0.2",
+    "description": "official release of the alphabot",
+    "main": "main.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "ultratrikx#1056",
+    "license": "ISC",
+    "dependencies": {
+      "discord.js": "^12.5.1"
+    }
   }
-}
