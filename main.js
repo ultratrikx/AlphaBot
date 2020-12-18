@@ -17,15 +17,15 @@ for (const file of commandFiles){
 
 client.once('ready', () => {
     console.log('AlphaBot is online!');
-    //client.user.setPresence({
-        //status: "dnd",  // You can show online, idle... Do not disturb is dnd
+    client.user.setPresence({
+        status: "dnd",  //You can show online, idle... Do not disturb is dnd
         
-        //activity: {
-            //name: "nothing",  // The message shown
-            //type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
-        //}
+        activity: {
+            name: "the winter break",  // The message shown
+            type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
+        }
     });
-//});
+});
 
 client.on('guildMemberAdd', guildMember =>{
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
@@ -85,6 +85,18 @@ client.on('message', message =>{
 
     }else if(command == 'botinfo'){
         client.commands.get('botinfo').execute(message, args, Discord);
+
+    }else if(command == 'kick'){
+        client.commands.get('kick').execute(message, args);
+
+    }else if(command == 'ban'){
+        client.commands.get('ban').execute(message, args);
+
+    }else if(command == 'mute'){
+        client.commands.get('mute').execute(message, args);
+
+    }else if(command == 'unmute'){
+        client.commands.get('unmute').execute(message, args);
 
     }
 });

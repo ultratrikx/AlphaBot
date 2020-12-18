@@ -8,7 +8,7 @@ module.exports = {
         if(args[0] > 100) return message.reply("the maximum amount of messages you can delete is 100");
         if(args[0] < 1) return message.reply("delete at least 1 message");
         
-        if(message.member.roles.cache.has('689142040965152778')){
+        if(message.member.roles.cache.has('689142040965152778', '665035759861891072')){
             await message.channel.messages.fetch({limit: args[0]}).then(messages =>{
             message.channel.bulkDelete(messages);
             message.reply('Done').then((m) => m.delete({ timeout: 500 }));
