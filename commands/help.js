@@ -12,7 +12,7 @@ module.exports = {
             + 'type `.hi` to get haunted\n'
             + 'type `.babykata2` for meme\n\n'
             + '**Admin Commands**\n'
-            + 'type `.clear [number]` to clear messages '
+            + 'type `.clear [number]` to clear messages\n\n'
             + '**Colour Role Commands**\n'
             + 'type `.redrole` to get a red colour on your name\n'
             + 'type `.blues` to get the blue colour on you name\n'
