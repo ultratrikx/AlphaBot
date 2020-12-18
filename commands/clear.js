@@ -2,8 +2,8 @@ module.exports = {
     name: 'clear',
     description: "this is a clear command!",
     async execute(message, args){
-        
-        if(message.member.roles.cache.has(role => role.name === "Admin")){
+
+        if(message.member.roles.cache.has('764586697106522147', '689142040965152778', '665035759861891072')){
             if(!args[0]) return message.reply("enter a number of messages to clear");
             if(isNaN(args[0])) return message.reply("enter a number following the command like so `.clear [1]`");
 
