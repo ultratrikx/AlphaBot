@@ -14,7 +14,7 @@ module.exports = {
             + 'type `.weather [location]` for weather of said location\n'
             + 'type `.covid [country]` for info about their covid cases\n'
             + 'type `.math [mathequation]` for calculation\n'
-            + 'type `.meme` for a meme (they may contain swearing)\n'
+           // + 'type `.meme` for a meme (they may contain swearing)\n'
             + 'type `.botinfo` for information about the bot\n\n'
             + '**Admin Commands**\n'
             + 'type `.clear [number]` to clear messages\n'
