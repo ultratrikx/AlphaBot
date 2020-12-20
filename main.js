@@ -109,8 +109,24 @@ client.on('message', message =>{
     }else if(command == 'math'){
         client.commands.get('math').execute(client, message, args);
 
+    }else if(command == 'meme'){
+        client.commands.get('meme').execute(client, message, args);
+
+    }else if(command == 'deaf'){
+        client.commands.get('deaf').execute(message, args);
+
+    }else if(command == 'undeaf'){
+        client.commands.get('undeaf').execute(message, args);
+
+    }else if(command == 'mutes'){
+        client.commands.get('undeaf').execute(message, args);
+
+    }else if(command == 'undeaf'){
+        client.commands.get('unmutes').execute(message, args);
+
     }
 });
 
 
+//client.login(process.env.ALPHABOT_DJS_TOKEN)
 client.login(token)

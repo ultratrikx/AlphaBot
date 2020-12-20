@@ -21,7 +21,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
         .setColor(0x808080)
-        .setTitle('Calculator')
+        .setTitle('Big Brain')
         .addField('Qustion', `\`\`\`css\n${args.join(' ')}\`\`\``)
         .addField('Answer', `\`\`\`css\n${resp}\`\`\``)
 
