@@ -1,7 +1,7 @@
-node_modules
-github.js
-deaf.js
-mutes.js
-unmutes.js
-undeaf.js
-meme.js
+node_modules,
+github.js,
+deaf.js,
+mutes.js,
+unmutes.js,
+undeaf.js,
+meme.js,
