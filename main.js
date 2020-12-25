@@ -119,9 +119,9 @@ client.on('message', message =>{
         client.commands.get('undeaf').execute(message, args);
 
     }else if(command == 'mutes'){
-        client.commands.get('undeaf').execute(message, args);
+        client.commands.get('mutes').execute(message, args);
 
-    }else if(command == 'undeaf'){
+    }else if(command == 'unmutes'){
         client.commands.get('unmutes').execute(message, args);
 
     }
