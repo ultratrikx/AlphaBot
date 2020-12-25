@@ -16,3 +16,42 @@
        // message.channel.send(newsEmbed);
     //}
 //}
+
+
+
+
+
+
+    //client.api.applications(client.user.id).guilds('657402007925030922').commands.post({
+        //data: {
+            //name: "echo",
+            //description: "Echos your text as an embed!",
+
+           // options: [
+               // {
+              //      name: "content",
+               //     description: "Content of the embed",
+               //     type: 3,
+               //     required: true
+               // }
+          //  ]
+      //  }
+    //});
+
+// if(command == "echo") {
+           // const description = args.find(arg => arg.name.toLowerCase() == "content").value;
+           // const embeds = new Discord.MessageEmbed()
+               // .setTitle("Echo!")
+                //.setDescription(description)
+                //.setAuthor(interaction.member.user.username);
+
+           // client.api.interactions(interaction.id, interaction.token).callback.post({
+                //data: {
+                //    type: 4,
+               //     data: await createAPIMessage(interaction, embeds)
+                //}
+            //});
+        //}
+
+        
+
