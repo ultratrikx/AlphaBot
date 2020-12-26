@@ -10,6 +10,35 @@ const { token } = require('./config.json');
 
 client.commands = new Discord.Collection();
 
+
+
+
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+const { GiveawaysManager } = require('discord-giveaways');
+client.giveawaysManager = new GiveawaysManager(client, {
+    storage: "./giveaways.json",
+    updateCountdownEvery: 5000,
+    default: {
+        botsCanWin: false,
+        embedColor: "#ff8cff",
+        reaction: "🎉"
+    }
+});
+// We now have a client.giveawaysManager property to manage our giveaways!
+
+client.giveawaysManager.on("giveawayReactionAdded", (giveaway, member, reaction) => {
+    console.log(`${member.user.tag} entered giveaway #${giveaway.messageID} (${reaction.emoji.name})`);
+});
+
+client.giveawaysManager.on("giveawayReactionRemoved", (giveaway, member, reaction) => {
+    console.log(`${member.user.tag} unreact to giveaway #${giveaway.messageID} (${reaction.emoji.name})`);
+});
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+
+
+
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'))
 for (const file of commandFiles){
     const command = require(`./commands/${file}`);
@@ -17,6 +46,10 @@ for (const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
+
+
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 client.once('ready', () => {
     console.log('AlphaBot is online!');
 
@@ -53,9 +86,9 @@ client.once('ready', () => {
         if(command == 'help') {
             const embed = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Commands')
-            .setAuthor('Alpha Bot#0038', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
-            .setDescription('Here’s the list of commands!\n\n'
+            .setTitle('Type `.help` for more commands!')
+            .setAuthor('Alpha Bot', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+            .setDescription('Here’s a few commands to get you started\n\n'
                 + '**Normal Commands**\n'
                 + 'type `.ping` to get rudely insulted\n'
                 + 'type `.hi` to get haunted\n'
@@ -65,12 +98,6 @@ client.once('ready', () => {
                 + 'type `.math [math equation]` for calculation\n'
                 + 'type `.meme` for a meme (they may contain swearing)\n'
                 + 'type `.botinfo` for information about the bot\n\n'
-                + '**Admin Commands**\n'
-                + 'type `.clear [number]` to clear messages\n'
-                + 'type `.mute [@user] [number]m or s` to timed mute mentioned user \n'
-                + 'type `.unmute [@user]` to manually unmute the mentioned user\n '
-                + 'type `.kick [@user]` to kick mentioned user\n'
-                + 'type `.ban [@user]` to punish someone who says trans right aren‘t human rights\n\n'
                 + '**Colour Role Commands**\n'
                 + 'type `.redrole` to get a red colour on your name\n'
                 + 'type `.blues` to get the blue colour on you name\n'
@@ -80,10 +107,8 @@ client.once('ready', () => {
                 + 'type `.admincolour` to get the black admin colour (only for admins you idiot)\n'
                 + 'type `.boostercolour` to get the booster pink colour (boost this server to unlock this)')
     
-                
             .setFooter('Made by nf#0001 in partnership with ultratrikx#1056 and Alpha Bot#0038');
 
-            
             client.api.interactions(interaction.id, interaction.token).callback.post({
                 data: {
                     type: 4,
@@ -91,8 +116,12 @@ client.once('ready', () => {
                 }
             });
         }
-
     });
+    //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
+
+
+
 
     client.user.setPresence({
         status: "dnd",  //You can show online, idle... Do not disturb is dnd
@@ -104,6 +133,11 @@ client.once('ready', () => {
     });
 });
 
+
+
+
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
 async function createAPIMessage(interaction, content) {
     const apiMessage = await Discord.APIMessage.create(client.channels.resolve(interaction.channel_id), content)
         .resolveData()
@@ -111,6 +145,11 @@ async function createAPIMessage(interaction, content) {
     
     return { ...apiMessage.data, files: apiMessage.files };
 }
+//------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------
+
+
+
 
 client.on('guildMemberAdd', guildMember =>{
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
@@ -132,7 +171,7 @@ client.on('message', message =>{
         client.commands.get('hi').execute(message, args);
 
     } else if (command == 'help'){
-        client.commands.get('help').execute(message, args, Discord);
+        client.commands.get('help').execute(client, message, args, Discord);
 
     }else if (command == 'babykata2'){
         client.commands.get('babykata2').execute(message, args);
@@ -205,6 +244,15 @@ client.on('message', message =>{
 
     }else if(command == 'unmutes'){
         client.commands.get('unmutes').execute(message, args);
+
+    }else if(command == 'giveaway'){
+        client.commands.get('giveaway').execute(client, message, args, Discord);
+
+    }else if(command == 'reroll'){
+        client.commands.get('reroll').execute(client, message, args, Discord);
+
+    }else if(command == 'endgiveaway'){
+        client.commands.get('endgiveaway').execute(client, message, args, Discord);
 
     }
 });

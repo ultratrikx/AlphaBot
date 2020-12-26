@@ -1,39 +1,80 @@
+const pagination = require ('discord.js-pagination')
+const Discord = require ('discord.js')
+
 module.exports = {
     name: 'help',
     description: "this is a help command!",
-    execute(message, args, Discord){
-        const newEmbed = new Discord.MessageEmbed()
-        .setColor('#0099ff')
-        .setTitle('Commands')
-        .setAuthor('Alpha Bot#0038', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
-        .setDescription('Here’s the list of commands!\n\n'
-            + '**Normal Commands**\n'
-            + 'type `.ping` to get rudely insulted\n'
-            + 'type `.hi` to get haunted\n'
-            + 'type `.babykata2` for meme\n'
-            + 'type `.weather [location]` for weather of said location\n'
-            + 'type `.covid [country]` for info about their covid cases\n'
-            + 'type `.math [math equation]` for calculation\n'
-            + 'type `.meme` for a meme (they may contain swearing)\n'
-            + 'type `.botinfo` for information about the bot\n\n'
-            + '**Admin Commands**\n'
-            + 'type `.clear [number]` to clear messages\n'
-            + 'type `.mute [@user] [number]m or s` to timed mute mentioned user \n'
-            + 'type `.unmute [@user]` to manually unmute the mentioned user\n '
-            + 'type `.kick [@user]` to kick mentioned user\n'
-            + 'type `.ban [@user]` to punish someone who says trans right aren‘t human rights\n\n'
-            + '**Colour Role Commands**\n'
-            + 'type `.redrole` to get a red colour on your name\n'
-            + 'type `.blues` to get the blue colour on you name\n'
-            + 'type `.grebn` to become shrek\n'
-            + 'type `.pruple` to become pruple\n'
-            + 'type `.rameningscolour` to cause confuse\n'
-            + 'type `.admincolour` to get the black admin colour (only for admins you idiot)\n'
-            + 'type `.boostercolour` to get the booster pink colour (boost this server to unlock this)')
+    async execute(client, message, args, Discord){
+        const mainpage = new Discord.MessageEmbed()
+        .setColor('#db0000')
+        .setTitle('Commands Help')
+        .setThumbnail('https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+        .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+        .setDescription("Simply scroll through pages using the reaction emoji's below")
+        .setTimestamp()
 
-            
-        .setFooter('Made by nf#0001 in partnership with ultratrikx#1056 and Alpha Bot#0038');
+        const moderation = new Discord.MessageEmbed()
+        .setColor('#db0000')
+        .setTitle('Moderation Commands Help')
+        .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+        .setDescription("For admins only")
+        .addField('`.clear [number]`','clear set number of messages')
+        .addField('`.mute [@user] [number]m or s`','timed mute mentioned user')
+        .addField('`.unmute [@user]`','manually unmute the mentioned user')
+        .addField('`.kick [@user]`','kick mentioned user')
+        .addField('`.ban [@user]`','punish someone who says trans right aren‘t human rights')
+        .setTimestamp()
 
-        message.channel.send(newEmbed);
+        const utility = new Discord.MessageEmbed()
+        .setColor('#6b81ff')
+        .setTitle('Utility Commands Help')
+        .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+        .setDescription("Just some random stuff")
+        .addField('`.weather [location]`','for weather of said location')
+        .addField('`.covid [country, all]`','info about their covid cases')
+        .addField('`.math [math equation]`','math calculation')
+        .addField('`.botinfo`','information about the bot')
+        .addField('`.ping`','to get lag info')
+        .addField('`.giveaway #channel [duration] [number of winners] [prize]`','host a giveaway')
+        .addField('`.reroll [message ID of giveaway]`',' reroll the winners of a giveaway')
+        .addField('`.endgiveaway [message ID of giveaway]`','end a giveaway early')
+        .setTimestamp()
+
+        const fun = new Discord.MessageEmbed()
+        .setColor('#e5ff00')
+        .setTitle('Fun Commands Help')
+        .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+        .setDescription("Fun Commands stuff")
+        .addField('`.babykata2`','funny command')
+        .addField('`.hi`','more funny command')
+        .addField('`.meme`','get a random meme')
+        .setTimestamp()
+
+        const colourroles = new Discord.MessageEmbed()
+        .setColor('#00ffd5')
+        .setTitle('Colourful Roles Command Help')
+        .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+        .setDescription("Get some colourful roles")
+        .addField('`.redrole`','red coloured role!')
+        .addField('`.blues`','blue coloured role!')
+        .addField('`.grebn`','easiest way to become shrek')
+        .addField('`.pruple`','the typo was intentional')
+        .addField('`.ramenings colour`','cause confuse')
+        .addField('`.adminblack`','only for admins, the darkest black')
+        .addField('`.boostercolour`','bright pink only for our serotonin boosters')
+        .setTimestamp()
+
+        const pages = [
+                mainpage,
+                colourroles,
+                utility,
+                fun,
+                moderation
+        ]
+        const emojilist = ["⏪", "⏩"]
+        const timeout = '120000'
+
+        pagination(message, pages, emojilist, timeout)
+
     }
 }

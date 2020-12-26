@@ -28,6 +28,7 @@ module.exports = {
                 let deaths = data.deaths.value.toLocaleString()
 
                 const embed = new Discord.MessageEmbed()
+                .setColor('#008009')
                 .setTitle(`Worldwide COVID-19 Stats 🌎`)
                 .addField('Confirmed Cases', confirmed, '🦠')
                 .addField('Recovered', recovered,  '🏥')
@@ -45,6 +46,7 @@ module.exports = {
                 let deaths = data.deaths.value.toLocaleString()
 
                 const embed = new Discord.MessageEmbed()
+                .setColor('#008009')
                 .setTitle(`COVID-19 Stats for **${countries}** 🌐`)
                 .addField('Confirmed Cases', confirmed, '🦠')
                 .addField('Recovered', recovered, '🏥')
