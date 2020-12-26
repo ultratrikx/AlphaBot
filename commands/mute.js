@@ -1,7 +1,7 @@
 const ms = require('ms');
 module.exports = {
     name: 'mute',
-    description: "This mutes a member",
+    description: "shush",
     execute(message, args) {
         const target = message.mentions.users.first();
         if(message.member.roles.cache.has('689142040965152778', '665035759861891072')){

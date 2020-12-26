@@ -1,6 +1,6 @@
 module.exports = {
     name: 'kick',
-    description: "This command kicks a member!",
+    description: "the boot",
     execute(message, args){
         const target = message.mentions.users.first();
         if(message.member.roles.cache.has('689142040965152778', '665035759861891072')){

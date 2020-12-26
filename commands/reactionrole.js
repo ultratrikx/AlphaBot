@@ -24,7 +24,7 @@ module.exports = {
         const pollUpdatesEmoji = '❔';
 
         let embed = new Discord.MessageEmbed()
-            .setColor('#e42643')
+            .setColor('#b5ffff')
             .setTitle('Add On Roles by Yourself!!')
             .setDescription('You can always change!!\n\n'
                 + `${grebnEmoji} for shrek colour\n`

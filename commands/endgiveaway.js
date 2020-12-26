@@ -1,7 +1,7 @@
 const ms = require('ms');
 module.exports = {
     name: 'endgiveaway',
-    description: "this is a babykata command!",
+    description: "ends an existing giveaway",
     execute(client, message, args){
     // If the member doesn't have enough permissions
     if(!message.member.hasPermission('MANAGE_MESSAGES') && !message.member.roles.cache.some((r) => r.name === "Giveaways")){

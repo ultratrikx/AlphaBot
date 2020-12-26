@@ -1,6 +1,6 @@
 module.exports = {
     name: 'boostercolour',
-    description: "this is a blues command!",
+    description: "gives the booster the sweet serotonin pink",
     execute(message, args){
 
         if(message.member.roles.cache.has('707363002478755860')){

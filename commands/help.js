@@ -3,7 +3,7 @@ const Discord = require ('discord.js')
 
 module.exports = {
     name: 'help',
-    description: "this is a help command!",
+    description: "the all in one help command for help",
     async execute(client, message, args, Discord){
         const mainpage = new Discord.MessageEmbed()
         .setColor('#db0000')
@@ -14,7 +14,7 @@ module.exports = {
         .setTimestamp()
 
         const moderation = new Discord.MessageEmbed()
-        .setColor('#db0000')
+        .setColor('#ed3746')
         .setTitle('Moderation Commands Help')
         .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
         .setDescription("For admins only")
@@ -48,6 +48,7 @@ module.exports = {
         .addField('`.babykata2`','funny command')
         .addField('`.hi`','more funny command')
         .addField('`.meme`','get a random meme')
+        .addField('`.bigword`','makes your text big')
         .setTimestamp()
 
         const colourroles = new Discord.MessageEmbed()

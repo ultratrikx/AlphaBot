@@ -1,6 +1,6 @@
 module.exports = {
     name: 'pronounroles',
-    description: "this is a pronouns command!",
+    description: "reaction roles, but for pronoun roles",
     async execute(message, args, Discord, client){
         const channel = '786025091070033941';
         const hetheyRole = message.guild.roles.cache.find(role => role.name === "he/they");
@@ -19,7 +19,7 @@ module.exports = {
         const xexemEmoji = '⚪'
 
         let embed = new Discord.MessageEmbed()
-            .setColor('##ffb8d4')
+            .setColor('#ffb5fe')
             .setTitle('Add on Pronoun Roles!!')
             .setDescription(`I hope this goes without saying but don't abuse these\n\n`
                 + `${hetheyEmoji} for he/they pronouns\n`

@@ -1,6 +1,6 @@
 module.exports = {
     name: 'pruple',
-    description: "this is a pruple command!",
+    description: "gives you a purple role colour",
     execute(message, args){
 
         if(message.member.roles.cache.has('785671209634234368')){

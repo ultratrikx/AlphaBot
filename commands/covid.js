@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: "covid",
-    description: "Track a country or worldwide COVID-19 cases",
+    description: "tracks COVID-19 of a specific country or the entire world",
 
     async execute(client, message, args){
 
@@ -28,7 +28,8 @@ module.exports = {
                 let deaths = data.deaths.value.toLocaleString()
 
                 const embed = new Discord.MessageEmbed()
-                .setColor('#008009')
+                .setColor('#92b094')
+                .setThumbnail('https://cdn.discordapp.com/attachments/764586697437741088/792495914819780628/Screen_Shot_2020-12-26_at_3.55.05_PM.png')
                 .setTitle(`Worldwide COVID-19 Stats 🌎`)
                 .addField('Confirmed Cases', confirmed, '🦠')
                 .addField('Recovered', recovered,  '🏥')
@@ -46,7 +47,8 @@ module.exports = {
                 let deaths = data.deaths.value.toLocaleString()
 
                 const embed = new Discord.MessageEmbed()
-                .setColor('#008009')
+                .setColor('#92b094')
+                .setThumbnail('https://cdn.discordapp.com/attachments/764586697437741088/792495914819780628/Screen_Shot_2020-12-26_at_3.55.05_PM.png')
                 .setTitle(`COVID-19 Stats for **${countries}** 🌐`)
                 .addField('Confirmed Cases', confirmed, '🦠')
                 .addField('Recovered', recovered, '🏥')

@@ -254,6 +254,9 @@ client.on('message', message =>{
     }else if(command == 'endgiveaway'){
         client.commands.get('endgiveaway').execute(client, message, args, Discord);
 
+    }else if(command == 'bigword'){
+        client.commands.get('bigword').execute(client, message, args, Discord);
+
     }
 });
 

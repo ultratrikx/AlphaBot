@@ -1,6 +1,6 @@
 module.exports = {
     name: 'admincolour',
-    description: "this is a blues command!",
+    description: "gives the admin who uses this a black role colour",
     execute(message, args){
 
         if(message.member.roles.cache.has('689142040965152778')){

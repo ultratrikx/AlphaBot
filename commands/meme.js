@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: "meme",
-    description: "Gives you a meme",
+    description: "presents you a meme",
     async execute(client, message, args) { 
         const subReddits = ["dankmemes", "meme", "memes", "wholesomememes", "funny", ]
         const random = subReddits[Math.floor(Math.random() * subReddits.length)]

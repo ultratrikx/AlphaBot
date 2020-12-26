@@ -1,6 +1,6 @@
 module.exports = {
     name: 'babykata2',
-    description: "this is a babykata command!",
+    description: "electricboogaloo",
     execute(message, args){
         message.channel.send('electric boogaloo');
     }

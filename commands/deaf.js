@@ -3,7 +3,7 @@ const { GuildMember } = require("discord.js");
 module.exports = {
     name: 'deaf',
     cooldown: 5,
-    description: 'Deafens mentioned user or users.',
+    description: 'makes people lose their ears, sort of',
     execute(message, args) {
         const taggedMembers = message.mentions.members;
 

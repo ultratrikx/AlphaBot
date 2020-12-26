@@ -1,6 +1,6 @@
 module.exports = {
     name: 'clear',
-    description: "this is a clear command!",
+    description: "delets messages (typo on purpose)",
     async execute(message, args){
         if(!args[0]) return message.reply("enter a number of messages to clear");
         if(isNaN(args[0])) return message.reply("enter a number following the command like so `.clear [1]`");

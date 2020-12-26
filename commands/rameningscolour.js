@@ -1,6 +1,7 @@
 module.exports = {
     name: 'rameningscolour',
-    description: "this is a rameningscult command!",
+    aliases: ["black"],
+    description: "black but not black",
     execute(message, args){
 
         if(message.member.roles.cache.has('785671353902432257')){

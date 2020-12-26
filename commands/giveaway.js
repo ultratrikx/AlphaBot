@@ -2,7 +2,7 @@ const  ms = require ('ms');
 
 module.exports = {
     name: 'giveaway',
-    description: "this is a grebn command!",
+    description: "starts a giveaway",
     async execute(client, message, args){
         // If the member doesn't have enough permissions
     if(!message.member.hasPermission('MANAGE_MESSAGES') && !message.member.roles.cache.some((r) => r.name === "Giveaways")){

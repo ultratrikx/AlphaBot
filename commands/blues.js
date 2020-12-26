@@ -1,6 +1,6 @@
 module.exports = {
     name: 'blues',
-    description: "this is a blues command!",
+    description: "gives you a blue role",
     execute(message, args){
 
         if(message.member.roles.cache.has('785672717793755176')){

@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: "weather",
-    description: "Checks a weather forecast",
+    description: "ya want the weather, here you go",
 
     async execute(client, message, args){
 

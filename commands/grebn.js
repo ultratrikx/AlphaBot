@@ -1,6 +1,6 @@
 module.exports = {
     name: 'grebn',
-    description: "this is a grebn command!",
+    description: "gives you a green role",
     execute(message, args){
 
         if(message.member.roles.cache.has('785672794573897729')){

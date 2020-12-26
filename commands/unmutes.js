@@ -3,7 +3,7 @@ const { GuildMember } = require("discord.js");
 module.exports = {
     name: 'unmutes',
     cooldown: 5,
-    description: 'Deafens mentioned user or users.',
+    description: 'unshush but in vc',
     execute(message, args) {
         const taggedMembers = message.mentions.members;
 
