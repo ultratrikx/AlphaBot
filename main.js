@@ -6,7 +6,7 @@ const prefix = '.';
 
 const fs = require ('fs');
 
-const { token } = require('./config.json');
+// const { token } = require('./config.json');
 
 client.commands = new Discord.Collection();
 
@@ -260,6 +260,6 @@ client.on('message', message =>{
     }
 });
 
-
-//client.login(process.env.ALPHABOT_DJS_TOKEN)
-client.login(token)
+//1290 lines of code written
+client.login(process.env.ALPHABOT_DJS_TOKEN)
+//client.login(token)
