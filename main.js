@@ -6,7 +6,7 @@ const prefix = '.';
 
 const fs = require ('fs');
 
-// const { token } = require('./config.json');
+ const { token } = require('./config.json');
 
 client.commands = new Discord.Collection();
 
@@ -158,6 +158,19 @@ client.on('guildMemberAdd', guildMember =>{
     guildMember.guild.channels.cache.get('657402007925030925').send(`🎉 Welcome <@${guildMember.user.id}> <:smrik:771347389055107102> lol`)
 })
 
+//client.on('guildMemberRemove',servermember => {
+    //const leaveembed = new Discord.MessageEmbed()
+        //.setColor('#ff4d4d')
+        //.setAuthor(`${guildMember.username}`)
+       // .setTitle(`<@!${guildMember.username}> left the server`)
+        //.//setThumbnail(guildMember.displayAvatarURL)
+        //.setTimestamp()
+    
+   // servermember.guild.channels.cache.get('764586697437741088').send(`**${guildMember.user.id}** just left server or got hit by the ban hammer <:pensibe:771408866029600778>`);
+    //servermember.guild.channels.cache.get('764586697437741095').send(leaveembed)
+//})
+
+
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot)return;
 
@@ -207,13 +220,13 @@ client.on('message', message =>{
         client.commands.get('clear').execute(message,args);
 
     }else if(command == 'botinfo'){
-        client.commands.get('botinfo').execute(message, args, Discord);
+        client.commands.get('botinfo').execute(client, message, args, Discord);
 
     }else if(command == 'kick'){
-        client.commands.get('kick').execute(message, args);
+        client.commands.get('kick').execute(client, message, args, Discord);
 
     }else if(command == 'ban'){
-        client.commands.get('ban').execute(message, args);
+        client.commands.get('ban').execute(client, message, args, Discord);
 
     }else if(command == 'mute'){
         client.commands.get('mute').execute(message, args);
