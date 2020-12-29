@@ -289,5 +289,5 @@ client.on('message', message =>{
 });
 
 //1290 lines of code written
-//client.login(process.env.ALPHABOT_DJS_TOKEN)
-client.login(token)
+client.login(process.env.ALPHABOT_DJS_TOKEN)
+//client.login(token)
