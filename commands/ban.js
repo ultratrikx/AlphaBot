@@ -1,12 +1,14 @@
+const Discord = require('discord.js');
+
 module.exports = {
     name: 'ban',
     description: "ban hammer",
     async execute(client, message, args){
         
-        if(message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('You can\'t use that!')
-        if(message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
+        if(message.member.hasPermission("BAN_MEMBERS")){ 
 
-        const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+        const member = message.mentions.members.first() //|| message.guild.members.cache.get(args[0]);
+        const memberTarget = message.guild.members.cache.get(member.id);
         const channel = client.channels.cache.get('699693464664932474')
 
         if(!args[0]) return message.channel.send('mention a user please');
@@ -20,7 +22,7 @@ module.exports = {
 
         if (reason == undefined) reason = 'Unspecified';
 
-        member.ban(reason)
+        memberTarget.ban()
         .catch(err => {
             if(err) return message.channel.send('Something went very wrong')
         })
@@ -35,6 +37,13 @@ module.exports = {
         .setFooter('Time Banned', client.user.displayAvatarURL())
         .setTimestamp()
 
-       channel.send(banembed);
-        }
+        channel.send(banembed);
+        member.send('ban hammer go brr, btw the reason you were banned was\n'
+        + `\`${reason}\``)
+
+    }else{
+        message.channel.send('You can\'t use that!');
+    } 
+
     }
+}

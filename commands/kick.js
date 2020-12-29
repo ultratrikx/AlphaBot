@@ -5,8 +5,8 @@ module.exports = {
     description: "the boot",
     async execute(client, message, args){
         
-        if(message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('You can\'t use that!')
-        if(message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
+        if(message.member.hasPermission("KICK_MEMBERS")){
+       // if(message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
 
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         const channel = client.channels.cache.get('699693464664932474')
@@ -38,5 +38,12 @@ module.exports = {
         .setTimestamp()
 
        channel.send(kickembed);
+       member.send('the boot has been used, also the reason you were kicked was\n'
+            + `\`${reason}\``)
+
+    }else{
+        message.channel.send('You can\'t use that!');
+    } 
+
     }
 }

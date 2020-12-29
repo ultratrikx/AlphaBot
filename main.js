@@ -153,23 +153,17 @@ async function createAPIMessage(interaction, content) {
 
 client.on('guildMemberAdd', guildMember =>{
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
+    //const joinembed = new Discord.MessageEmbed()
+        //.setColor('#6de868')
+        //.setAuthor(`${guildMember}`)
+        //.setTitle(`@${guildMember} joined the server`)
+        //.setThumbnail(guildMember.user.displayAvatarURL())
+        //.setTimestamp()
 
     guildMember.roles.add(welcomeRole);
     guildMember.guild.channels.cache.get('657402007925030925').send(`🎉 Welcome <@${guildMember.user.id}> <:smrik:771347389055107102> lol`)
+    //guildMember.guild.channels.cache.get('699693464664932474').send(joinembed)
 })
-
-//client.on('guildMemberRemove',servermember => {
-    //const leaveembed = new Discord.MessageEmbed()
-        //.setColor('#ff4d4d')
-        //.setAuthor(`${guildMember.username}`)
-       // .setTitle(`<@!${guildMember.username}> left the server`)
-        //.//setThumbnail(guildMember.displayAvatarURL)
-        //.setTimestamp()
-    
-   // servermember.guild.channels.cache.get('764586697437741088').send(`**${guildMember.user.id}** just left server or got hit by the ban hammer <:pensibe:771408866029600778>`);
-    //servermember.guild.channels.cache.get('764586697437741095').send(leaveembed)
-//})
-
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot)return;
@@ -270,9 +264,30 @@ client.on('message', message =>{
     }else if(command == 'bigword'){
         client.commands.get('bigword').execute(client, message, args, Discord);
 
+    }else if(command == 'bal'){
+        client.commands.get('bal').execute(client, message, args, Discord);
+
+    }else if(command == 'daily'){
+        client.commands.get('daily').execute(client, message, args, Discord);
+
+    }else if(command == 'work'){
+        client.commands.get('work').execute(client, message, args, Discord);
+
+    }else if(command == 'lb'){
+        client.commands.get('lb').execute(client, message, args, Discord);
+
+    }else if(command == 'shop'){
+        client.commands.get('shop').execute(client, message, args, Discord);
+
+    }else if(command == 'buy'){
+        client.commands.get('buy').execute(client, message, args, Discord);
+
+    }else if(command == 'inv'){
+        client.commands.get('inv').execute(client, message, args, Discord);
+
     }
 });
 
 //1290 lines of code written
-client.login(process.env.ALPHABOT_DJS_TOKEN)
-//client.login(token)
+//client.login(process.env.ALPHABOT_DJS_TOKEN)
+client.login(token)
