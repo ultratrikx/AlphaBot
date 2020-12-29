@@ -51,6 +51,20 @@ module.exports = {
         .addField('`.bigword`','makes your text big')
         .setTimestamp()
 
+        const economy = new Discord.MessageEmbed()
+        .setColor('#e5ff00')
+        .setTitle('Economy Commands Help')
+        .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
+        .setDescription("Economy Commands stuff")
+        .addField('`.bal`','check balance')
+        .addField('`.daily`','collect daily money')
+        .addField('`.work`','work and earn money')
+        .addField('`.shop`','open shop')
+        .addField('`.buy`','buy something from shop')
+        .addField('`.inv`','check inventory')
+        .addField('`.lb`','check server leaderboard')
+        .setTimestamp()
+
         const colourroles = new Discord.MessageEmbed()
         .setColor('#00ffd5')
         .setTitle('Colourful Roles Command Help')
@@ -69,6 +83,7 @@ module.exports = {
                 mainpage,
                 colourroles,
                 utility,
+                economy,
                 fun,
                 moderation
         ]
