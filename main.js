@@ -127,8 +127,8 @@ client.once('ready', () => {
         status: "dnd",  //You can show online, idle... Do not disturb is dnd
         
         activity: {
-            name: "the winter break",  // The message shown
-            type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
+            name: "2020 end",  // The message shown
+            type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
         }
     });
 });
