@@ -264,6 +264,9 @@ client.on('message', message =>{
     }else if(command == 'bigword'){
         client.commands.get('bigword').execute(client, message, args, Discord);
 
+    }else if(command == 'newyear'){
+        client.commands.get('newyear').execute(client, message, args, Discord);
+
     }
 });
 
