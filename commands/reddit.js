@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const got = require('got');
 
 module.exports = {
-    name: "rer",
+    name: "reddit",
     description: "recieve a random image from a subreddit of your choice",
 
     async execute(client, message, args, Discord) { 
