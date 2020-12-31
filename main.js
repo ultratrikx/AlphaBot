@@ -6,7 +6,7 @@ const prefix = '.';
 
 const fs = require ('fs');
 
- const { token } = require('./config.json');
+const { token } = require('./config.json');
 
 client.commands = new Discord.Collection();
 
@@ -214,7 +214,7 @@ client.on('message', message =>{
         client.commands.get('clear').execute(message,args);
 
     }else if(command == 'botinfo'){
-        client.commands.get('botinfo').execute(client, message, args, Discord);
+        client.commands.get('botinfo').execute(message, args, Discord);
 
     }else if(command == 'kick'){
         client.commands.get('kick').execute(client, message, args, Discord);
@@ -237,8 +237,8 @@ client.on('message', message =>{
     }else if(command == 'math'){
         client.commands.get('math').execute(client, message, args);
 
-    }else if(command == 'meme'){
-        client.commands.get('meme').execute(client, message, args);
+    }else if(command == 'reddit'){
+        client.commands.get('reddit').execute(client, message, args, Discord);
 
     }else if(command == 'deaf'){
         client.commands.get('deaf').execute(message, args);
@@ -263,27 +263,6 @@ client.on('message', message =>{
 
     }else if(command == 'bigword'){
         client.commands.get('bigword').execute(client, message, args, Discord);
-
-    }else if(command == 'bal'){
-        client.commands.get('bal').execute(client, message, args, Discord);
-
-    }else if(command == 'daily'){
-        client.commands.get('daily').execute(client, message, args, Discord);
-
-    }else if(command == 'work'){
-        client.commands.get('work').execute(client, message, args, Discord);
-
-    }else if(command == 'lb'){
-        client.commands.get('lb').execute(client, message, args, Discord);
-
-    }else if(command == 'shop'){
-        client.commands.get('shop').execute(client, message, args, Discord);
-
-    }else if(command == 'buy'){
-        client.commands.get('buy').execute(client, message, args, Discord);
-
-    }else if(command == 'inv'){
-        client.commands.get('inv').execute(client, message, args, Discord);
 
     }
 });
