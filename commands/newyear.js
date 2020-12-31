@@ -6,6 +6,7 @@ module.exports ={
     name: 'newyear',
     description: "reminder",
     async execute(client,message,args){
+        const channels = client.channels.cache.get('657402007925030925')
         let timeuser = args[0]
         let reason = args.slice(1).join(" ")
         
@@ -20,7 +21,7 @@ module.exports ={
             if(Date.now() > db.fetch(`remind.${message.author.id}`)){
                 db.delete(`remind.${message.author.id}`)
                 //message.channel.send(`**Remind:**${reason}`)
-                message.channel.send('🎉🎊 **Happy New Year!!** 🎊🎉')
+                channels.send('🎉🎊 **Happy New Year!!** 🎊🎉')
                 .catch(e => console.log(e))
                 clearInterval(interval)
             }
