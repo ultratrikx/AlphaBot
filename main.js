@@ -214,7 +214,7 @@ client.on('message', message =>{
         client.commands.get('clear').execute(message,args);
 
     }else if(command == 'botinfo'){
-        client.commands.get('botinfo').execute(client, message, args, Discord);
+        client.commands.get('botinfo').execute(message, args, Discord);
 
     }else if(command == 'kick'){
         client.commands.get('kick').execute(client, message, args, Discord);
