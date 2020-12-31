@@ -127,7 +127,7 @@ client.once('ready', () => {
         status: "dnd",  //You can show online, idle... Do not disturb is dnd
         
         activity: {
-            name: "2020 end",  // The message shown
+            name: "2021.",  // The message shown
             type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
         }
     });
