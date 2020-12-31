@@ -1,10 +1,11 @@
 const { version } = require("discord.js")
+const Discord = require("discord.js")
 
 module.exports = {
     name: 'botinfo',
     description: "botinfo, to rip me off",
     execute(message, args, Discord){
-        const newsEmbed = new Discord.MessageEmbed()
+        const infoembed = new Discord.MessageEmbed()
         .setColor('#0099ff')
         .setTitle('Bot Info')
         .setAuthor('Alpha Bot#0038', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
@@ -22,6 +23,6 @@ module.exports = {
             
         .setFooter('Made by ultratrikx#1056 and Alpha Bot#0038');
 
-        message.channel.send(newsEmbed);
+        message.channel.send(infoembed);
     }
 }
