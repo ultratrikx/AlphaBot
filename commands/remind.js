@@ -3,10 +3,9 @@ const ms = require("ms")
 const db = require("quick.db")
 
 module.exports ={
-    name: 'newyear',
+    name: 'remind',
     description: "reminder",
-    async execute(client,message,args){
-        const channels = client.channels.cache.get('657402007925030925')
+    async execute(client, message,args){
         let timeuser = args[0]
         let reason = args.slice(1).join(" ")
         
@@ -14,14 +13,13 @@ module.exports ={
         if(!reason) return message.reply(":x: enter reason")
         
         db.set(`remind.${message.author.id}`,Date.now() + ms(timeuser))
-        message.channel.send("ok")
+        message.channel.send("alright then")
         const interval = setInterval(function() {
         
         
             if(Date.now() > db.fetch(`remind.${message.author.id}`)){
                 db.delete(`remind.${message.author.id}`)
-                //message.channel.send(`**Remind:**${reason}`)
-                channels.send('🎉🎊 **Happy New Year!!** 🎊🎉')
+                message.author.send(`**Reminder:** ${reason}`)
                 .catch(e => console.log(e))
                 clearInterval(interval)
             }

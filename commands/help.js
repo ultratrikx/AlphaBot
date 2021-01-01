@@ -34,6 +34,8 @@ module.exports = {
         .addField('`.covid [country, all]`','info about their covid cases')
         .addField('`.math [math equation]`','math calculation')
         .addField('`.botinfo`','information about the bot')
+        .addField('`.timer`','set a timer')
+        .addField('`.reminder`','set a reminder')
         .addField('`.ping`','to get lag info')
         .addField('`.giveaway #channel [duration] [number of winners] [prize]`','host a giveaway')
         .addField('`.reroll [message ID of giveaway]`',' reroll the winners of a giveaway')

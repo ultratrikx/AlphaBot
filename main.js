@@ -264,8 +264,11 @@ client.on('message', message =>{
     }else if(command == 'bigword'){
         client.commands.get('bigword').execute(client, message, args, Discord);
 
-    }else if(command == 'newyear'){
-        client.commands.get('newyear').execute(client, message, args, Discord);
+    }else if(command == 'remind'){
+        client.commands.get('remind').execute(client, message, args, Discord);
+
+    }else if(command == 'timer'){
+        client.commands.get('timer').execute(client, message, args, Discord);
 
     }
 });
