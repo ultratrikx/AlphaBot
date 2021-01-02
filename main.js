@@ -153,16 +153,13 @@ async function createAPIMessage(interaction, content) {
 
 client.on('guildMemberAdd', guildMember =>{
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
-    //const joinembed = new Discord.MessageEmbed()
-        //.setColor('#6de868')
-        //.setAuthor(`${guildMember}`)
-        //.setTitle(`@${guildMember} joined the server`)
-        //.setThumbnail(guildMember.user.displayAvatarURL())
-        //.setTimestamp()
 
     guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('657402007925030925').send(`🎉 Welcome <@${guildMember.user.id}> <:smrik:771347389055107102> lol`)
-    //guildMember.guild.channels.cache.get('699693464664932474').send(joinembed)
+    guildMember.guild.channels.cache.get('657402007925030925').send(`🎉 Welcome <@${guildMember.user.id}> <:smrik:771347389055107102>`)
+})
+
+client.on('guildMemberRemove', guildMember =>{
+    guildMember.guild.channels.cache.get('657402007925030925').send(`<@${guildMember.user.id}> just left the server, press f to pay respects <:pensibe:771408866029600778>`);
 })
 
 client.on('message', message =>{
