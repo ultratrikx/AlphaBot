@@ -1,12 +1,12 @@
 module.exports = {
     name: 'grebn',
     description: "gives you a green role",
-    execute(message, args){
+    execute(message, args) {
 
-        if(message.member.roles.cache.has('785672794573897729')){
+        if (message.member.roles.cache.has('785672794573897729')) {
             message.channel.send('grebn = shrek')
 
-        } else{
+        } else {
             message.channel.send('here you go :D');
             message.member.roles.add('785672794573897729');
             message.member.roles.remove('785672595706085397');
@@ -16,7 +16,7 @@ module.exports = {
             message.member.roles.remove('785979645082206228');
             message.member.roles.remove('785979334204063775');
         }
-       
+
 
     }
 }

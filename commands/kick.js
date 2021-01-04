@@ -3,47 +3,47 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'kick',
     description: "the boot",
-    async execute(client, message, args){
-        
-        if(message.member.hasPermission("KICK_MEMBERS")){
-       // if(message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
+    async execute(client, message, args) {
 
-        const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        const channel = client.channels.cache.get('699693464664932474')
+        if (message.member.hasPermission("KICK_MEMBERS")) {
+            // if(message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
 
-        if(!args[0]) return message.channel.send('mention a user please');
+            const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+            const channel = client.channels.cache.get('699693464664932474')
 
-        if(!member) return message.channel.send('Can\'t seem to find this user.');
-        if(!member.kickable) return message.channel.send('This user can\'t be kicked. It is either because they are a mod/admin, or their highest role is higher than mine');
+            if (!args[0]) return message.channel.send('mention a user please');
 
-        if(member.id === message.author.id) return message.channel.send('Bruh, you can\'t kick yourself!');
+            if (!member) return message.channel.send('Can\'t seem to find this user.');
+            if (!member.kickable) return message.channel.send('This user can\'t be kicked. It is either because they are a mod/admin, or their highest role is higher than mine');
 
-        let reason = args.slice(1).join(" ");
+            if (member.id === message.author.id) return message.channel.send('Bruh, you can\'t kick yourself!');
 
-        if (reason == undefined) reason = 'Unspecified';
+            let reason = args.slice(1).join(" ");
 
-        member.kick(reason)
-        .catch(err => {
-            if(err) return message.channel.send('Something went wrong')
-        })
+            if (reason == undefined) reason = 'Unspecified';
 
-        const kickembed = new Discord.MessageEmbed()
-        .setColor('#ff4d4d')
-        .setTitle('Member Kicked')
-        .setThumbnail(member.user.displayAvatarURL())
-        .addField('User Kicked', member)
-        .addField('Kicked by', message.author)
-        .addField('Reason', `${reason}.`)
-        .setFooter('Time Kicked', client.user.displayAvatarURL())
-        .setTimestamp()
+            member.kick(reason)
+                .catch(err => {
+                    if (err) return message.channel.send('Something went wrong')
+                })
 
-       channel.send(kickembed);
-       member.send('the boot has been used, also the reason you were kicked was\n'
-            + `\`${reason}\``)
+            const kickembed = new Discord.MessageEmbed()
+                .setColor('#ff4d4d')
+                .setTitle('Member Kicked')
+                .setThumbnail(member.user.displayAvatarURL())
+                .addField('User Kicked', member)
+                .addField('Kicked by', message.author)
+                .addField('Reason', `${reason}.`)
+                .setFooter('Time Kicked', client.user.displayAvatarURL())
+                .setTimestamp()
 
-    }else{
-        message.channel.send('You can\'t use that!');
-    } 
+            channel.send(kickembed);
+            member.send('the boot has been used, also the reason you were kicked was\n'
+                + `\`${reason}\``)
+
+        } else {
+            message.channel.send('You can\'t use that!');
+        }
 
     }
 }

@@ -1,9 +1,9 @@
 module.exports = {
     name: 'boostercolour',
     description: "gives the booster the sweet serotonin pink",
-    execute(message, args){
+    execute(message, args) {
 
-        if(message.member.roles.cache.has('707363002478755860')){
+        if (message.member.roles.cache.has('707363002478755860')) {
             message.channel.send('serotonin pink here you go');
             message.member.roles.add('785979645082206228');
             message.member.roles.remove('785672595706085397');
@@ -13,10 +13,10 @@ module.exports = {
             message.member.roles.remove('785979334204063775');
             message.member.roles.remove('785672794573897729');
 
-        } else{
+        } else {
             message.channel.send('boost this server and get this colour');
         }
-       
+
 
     }
 }

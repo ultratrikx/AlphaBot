@@ -11,7 +11,7 @@ module.exports = {
             member.voice.setMute(false)
                 .then(() => console.log(`unmuted ${member.displayName}`))
                 .catch(console.error);
-                message.channel.send(`unmuted ${member.displayName}`)
+            message.channel.send(`unmuted ${member.displayName}`)
         }
     },
 };

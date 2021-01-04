@@ -11,7 +11,7 @@ module.exports = {
             member.voice.setDeaf(false)
                 .then(() => console.log(`undeafened ${member.displayName}`))
                 .catch(console.error);
-                message.channel.send(`undeafened ${member.displayName}`)
+            message.channel.send(`undeafened ${member.displayName}`)
         }
 
     },

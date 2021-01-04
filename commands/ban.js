@@ -3,47 +3,47 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'ban',
     description: "ban hammer",
-    async execute(client, message, args){
-        
-        if(message.member.hasPermission("BAN_MEMBERS")){ 
+    async execute(client, message, args) {
 
-        const member = message.mentions.members.first() //|| message.guild.members.cache.get(args[0]);
-        const memberTarget = message.guild.members.cache.get(member.id);
-        const channel = client.channels.cache.get('699693464664932474')
+        if (message.member.hasPermission("BAN_MEMBERS")) {
 
-        if(!args[0]) return message.channel.send('mention a user please');
+            const member = message.mentions.members.first() //|| message.guild.members.cache.get(args[0]);
+            const memberTarget = message.guild.members.cache.get(member.id);
+            const channel = client.channels.cache.get('699693464664932474')
 
-        if(!member) return message.channel.send('Can\'t seem to find this user.');
-        if(!member.bannable) return message.channel.send('This user can\'t be banned. It is either because they are a mod/admin, or their highest role is higher than mine');
+            if (!args[0]) return message.channel.send('mention a user please');
 
-        if(member.id === message.author.id) return message.channel.send('Bruh, you can\'t ban yourself!');
+            if (!member) return message.channel.send('Can\'t seem to find this user.');
+            if (!member.bannable) return message.channel.send('This user can\'t be banned. It is either because they are a mod/admin, or their highest role is higher than mine');
 
-        let reason = args.slice(1).join(" ");
+            if (member.id === message.author.id) return message.channel.send('Bruh, you can\'t ban yourself!');
 
-        if (reason == undefined) reason = 'Unspecified';
+            let reason = args.slice(1).join(" ");
 
-        memberTarget.ban()
-        .catch(err => {
-            if(err) return message.channel.send('Something went very wrong')
-        })
+            if (reason == undefined) reason = 'Unspecified';
 
-        const banembed = new Discord.MessageEmbed()
-        .setColor('#ff4d4d')
-        .setTitle('Member Banned')
-        .setThumbnail(member.user.displayAvatarURL())
-        .addField('User Banned', member)
-        .addField('Banned by', message.author)
-        .addField('Reason', `${reason}.`)
-        .setFooter('Time Banned', client.user.displayAvatarURL())
-        .setTimestamp()
+            memberTarget.ban()
+                .catch(err => {
+                    if (err) return message.channel.send('Something went very wrong')
+                })
 
-        channel.send(banembed);
-        member.send('ban hammer go brr, btw the reason you were banned was\n'
-        + `\`${reason}\``)
+            const banembed = new Discord.MessageEmbed()
+                .setColor('#ff4d4d')
+                .setTitle('Member Banned')
+                .setThumbnail(member.user.displayAvatarURL())
+                .addField('User Banned', member)
+                .addField('Banned by', message.author)
+                .addField('Reason', `${reason}.`)
+                .setFooter('Time Banned', client.user.displayAvatarURL())
+                .setTimestamp()
 
-    }else{
-        message.channel.send('You can\'t use that!');
-    } 
+            channel.send(banembed);
+            member.send('ban hammer go brr, btw the reason you were banned was\n'
+                + `\`${reason}\``)
+
+        } else {
+            message.channel.send('You can\'t use that!');
+        }
 
     }
 }

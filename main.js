@@ -16,6 +16,7 @@ client.commands = new Discord.Collection();
 //------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 const { GiveawaysManager } = require('discord-giveaways');
+const { aliases } = require('./commands/reddit');
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
     updateCountdownEvery: 5000,
@@ -66,7 +67,7 @@ client.once('ready', () => {
             description: "Shows a list of all commands for AlphaBot"
         }
     });
-
+    
     client.ws.on('INTERACTION_CREATE', async interaction => {
         const command = interaction.data.name.toLowerCase();
         const args = interaction.data.options;
@@ -208,7 +209,7 @@ client.on('message', message => {
         client.commands.get('pronounroles').execute(message, args, Discord, client);
 
     } else if (command == 'clear') {
-        client.commands.get('clear').execute(message, args);
+        client.commands.get('clear').execute(client, message, args);
 
     } else if (command == 'botinfo') {
         client.commands.get('botinfo').execute(message, args, Discord);
@@ -267,12 +268,9 @@ client.on('message', message => {
     } else if (command == 'timer') {
         client.commands.get('timer').execute(client, message, args, Discord);
 
-    } else if (command == 'test') {
-        client.commands.get('test').execute(client, message, args, Discord);
-
     }
 });
 
 //1290 lines of code written
-//client.login(process.env.ALPHABOT_DJS_TOKEN)
-client.login(token)
+client.login(process.env.ALPHABOT_DJS_TOKEN)
+//client.login(token)

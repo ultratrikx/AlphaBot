@@ -7,9 +7,9 @@ module.exports = {
     name: "math",
     description: "this command does math",
 
-    async execute(client, message, args){
+    async execute(client, message, args) {
 
-        if(!args[0]) return message.channel.send('provide a equation you genius');
+        if (!args[0]) return message.channel.send('provide a equation you genius');
 
         let resp;
 
@@ -20,13 +20,13 @@ module.exports = {
         }
 
         const embed = new Discord.MessageEmbed()
-        .setColor(0x808080)
-        .setTitle('Big Brain')
-        .addField('Qustion', `\`\`\`css\n${args.join(' ')}\`\`\``)
-        .addField('Answer', `\`\`\`css\n${resp}\`\`\``)
+            .setColor(0x808080)
+            .setTitle('Big Brain')
+            .addField('Qustion', `\`\`\`css\n${args.join(' ')}\`\`\``)
+            .addField('Answer', `\`\`\`css\n${resp}\`\`\``)
 
         message.channel.send(embed);
 
     }
-    
+
 }
