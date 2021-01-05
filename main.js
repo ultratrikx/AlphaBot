@@ -13,6 +13,7 @@ client.commands = new Discord.Collection();
 
 
 
+
 //------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 const { GiveawaysManager } = require('discord-giveaways');
@@ -46,7 +47,6 @@ for (const file of commandFiles) {
 
     client.commands.set(command.name, command);
 }
-
 
 
 //------------------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ client.once('ready', () => {
                     + 'type `.admincolour` to get the black admin colour (only for admins you idiot)\n'
                     + 'type `.boostercolour` to get the booster pink colour (boost this server to unlock this)')
 
-                .setFooter('Made by nf#0001 in partnership with ultratrikx#1056 and Alpha Bot#0038');
+                .setFooter('Made by nf#7972 in partnership with ultratrikx#2605 and Alpha Bot#0038');
 
             client.api.interactions(interaction.id, interaction.token).callback.post({
                 data: {
@@ -167,7 +167,7 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+    const command = args.shift().toLowerCase()
 
     if (command === 'ping') {
         client.commands.get('ping').execute(message, args);
@@ -202,10 +202,10 @@ client.on('message', message => {
     } else if (command == 'boostercolour') {
         client.commands.get('boostercolour').execute(message, args);
 
-    } else if (command == 'reactionrole') {
+    } else if (command == 'reactionrole' || command == 'rr') {
         client.commands.get('reactionrole').execute(message, args, Discord, client);
 
-    } else if (command == 'pronounroles') {
+    } else if (command == 'pronounroles' || command == 'pr') {
         client.commands.get('pronounroles').execute(message, args, Discord, client);
 
     } else if (command == 'clear') {
@@ -229,14 +229,11 @@ client.on('message', message => {
     } else if (command == 'weather') {
         client.commands.get('weather').execute(client, message, args);
 
-    } else if (command == 'covid') {
+    } else if (command == 'covid' || command == 'rona' || command == 'corona') {
         client.commands.get('covid').execute(client, message, args);
 
     } else if (command == 'math') {
         client.commands.get('math').execute(client, message, args);
-
-    } else if (command == 'reddit') {
-        client.commands.get('reddit').execute(client, message, args, Discord);
 
     } else if (command == 'deaf') {
         client.commands.get('deaf').execute(message, args);
@@ -256,10 +253,10 @@ client.on('message', message => {
     } else if (command == 'reroll') {
         client.commands.get('reroll').execute(client, message, args, Discord);
 
-    } else if (command == 'endgiveaway') {
+    } else if (command == 'endgiveaway' || command == 'endg') {
         client.commands.get('endgiveaway').execute(client, message, args, Discord);
 
-    } else if (command == 'bigword') {
+    } else if (command == 'bigword' || command == 'bw') {
         client.commands.get('bigword').execute(client, message, args, Discord);
 
     } else if (command == 'remind') {
@@ -272,5 +269,5 @@ client.on('message', message => {
 });
 
 //1290 lines of code written
-client.login(process.env.ALPHABOT_DJS_TOKEN)
-//client.login(token)
+//client.login(process.env.ALPHABOT_DJS_TOKEN)
+client.login(token)

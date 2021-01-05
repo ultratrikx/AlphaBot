@@ -5,7 +5,7 @@ const got = require('got');
 module.exports = {
     name: "reddit",
     description: "recieve a random image from a subreddit of your choice",
-    aliases: ["r"],
+    aliases: ['r', 'subreddit'],
 
     async execute(client, message, args, Discord) {
         const subReddits = ["dankmemes", "meme", "memes", "wholesomememes", "funny",]
