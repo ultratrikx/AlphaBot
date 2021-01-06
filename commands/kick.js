@@ -38,7 +38,7 @@ module.exports = {
                 .setTimestamp()
 
             channel.send(kickembed);
-            member.send('the boot has been used, also the reason you were kicked was\n'
+            member.send('the reason you were kicked was\n'
                 + `\`${reason}\``)
 
         } else {

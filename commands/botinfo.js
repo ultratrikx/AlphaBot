@@ -17,7 +17,7 @@ module.exports = {
                 + `**Discord.js Version** = ${version}\n`
                 + '**Bot User** = Alpha Bot#0038\n'
                 + '**Bot Owner** = ultratrikx#1056\n'
-                + '**Bot Token** = ||<a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200>||\n'
+               //s + '**Bot Token** = ||<a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200>||\n'
                 + '**Github** = https://github.com/ultratrikx/AlphaBot \n\n'
                 + 'Hosted on Heroku')
 

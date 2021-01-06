@@ -38,7 +38,7 @@ module.exports = {
                 .setTimestamp()
 
             channel.send(banembed);
-            member.send('ban hammer go brr, btw the reason you were banned was\n'
+            member.send('btw the reason you were banned was\n'
                 + `\`${reason}\``)
 
         } else {

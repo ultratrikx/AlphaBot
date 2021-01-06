@@ -14,7 +14,7 @@ module.exports = {
         const noArgs = new Discord.MessageEmbed()
             .setTitle('Missing arguments')
             .setColor(0xFF0000)
-            .setDescription('you\'re missing things ~~most likely your brain~~ try `.covid all` or `.covid Canada`')
+            .setDescription('you\'re missing arguements try `.covid all` or `.covid Canada`')
             .setTimestamp()
 
         if (!args[0]) return message.channel.send(noArgs);

@@ -15,16 +15,16 @@ module.exports = {
                 if (!args[1]) {
                     memberTarget.roles.add(muteRole.id);
                     message.channel.send(`<@${memberTarget.user.id}> has been muted`);
-                    target.send('what did you do to feel this pain?');
+                    target.send('you where muted');
                     return
                 }
                 memberTarget.roles.add(muteRole.id);
                 message.channel.send(`<@${memberTarget.user.id}> has been muted for ${ms(ms(args[1]))}`);
-                target.send('what did you do to feel this pain?');
+                target.send('you have been muted');
 
                 setTimeout(function () {
                     memberTarget.roles.remove(muteRole.id);
-                    target.send('anti-mute protocol initiated');
+                    target.send('unmuted');
                 }, ms(args[1]));
             } else {
                 message.channel.send('member is anti-exist');

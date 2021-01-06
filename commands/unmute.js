@@ -12,8 +12,8 @@ module.exports = {
 
                 memberTarget.roles.remove(muteRole.id);
                 memberTarget.roles.add(mainRole.id);
-                message.channel.send(`<@${memberTarget.user.id}> has been relieved of the pain`);
-                target.send('you have been unpained');
+                message.channel.send(`<@${memberTarget.user.id}> has been unmuted`);
+                target.send('you have been unmuted');
             } else {
                 message.channel.send(`member doesn't exist (i think)`);
 

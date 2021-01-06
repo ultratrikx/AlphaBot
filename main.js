@@ -156,11 +156,11 @@ client.on('guildMemberAdd', guildMember => {
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
 
     guildMember.roles.add(welcomeRole);
-    guildMember.guild.channels.cache.get('657402007925030925').send(`🎉 Welcome <@${guildMember.user.id}> <:smrik:771347389055107102>`)
+    guildMember.guild.channels.cache.get('796140427878858763').send(`🎉 Welcome <@${guildMember.user.id}>`)
 })
 
 client.on('guildMemberRemove', guildMember => {
-    guildMember.guild.channels.cache.get('657402007925030925').send(`<@${guildMember.user.id}> just left the server, press f to pay respects <:pensibe:771408866029600778>`);
+    guildMember.guild.channels.cache.get('796140427878858763').send(`<@${guildMember.user.id}> just left the server.`);
 })
 
 client.on('message', message => {
@@ -172,16 +172,10 @@ client.on('message', message => {
     if (command === 'ping') {
         client.commands.get('ping').execute(message, args);
 
-    } else if (command == 'hi') {
-        client.commands.get('hi').execute(message, args);
-
     } else if (command == 'help') {
         client.commands.get('help').execute(client, message, args, Discord);
 
-    } else if (command == 'babykata2') {
-        client.commands.get('babykata2').execute(message, args);
-
-    } else if (command == 'redrole') {
+    }  else if (command == 'redrole') {
         client.commands.get('redrole').execute(message, args);
 
     } else if (command == 'blues') {
@@ -269,5 +263,5 @@ client.on('message', message => {
 });
 
 //1290 lines of code written
-//client.login(process.env.ALPHABOT_DJS_TOKEN)
-client.login(token)
+client.login(process.env.ALPHABOT_DJS_TOKEN)
+//client.login(token)

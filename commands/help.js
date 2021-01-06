@@ -22,7 +22,7 @@ module.exports = {
             .addField('`.mute [@user] [number]m or s`', 'timed mute mentioned user')
             .addField('`.unmute [@user]`', 'manually unmute the mentioned user')
             .addField('`.kick [@user]`', 'kick mentioned user')
-            .addField('`.ban [@user]`', 'punish someone who says trans right aren‘t human rights')
+            .addField('`.ban [@user]`', 'ban mentioned user')
             .setTimestamp()
 
         const utility = new Discord.MessageEmbed()
@@ -47,9 +47,6 @@ module.exports = {
             .setTitle('Fun Commands Help')
             .setAuthor('Alpha Bot Commands Help', 'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024')
             .setDescription("Fun Commands stuff")
-            .addField('`.babykata2`', 'funny command')
-            .addField('`.hi`', 'more funny command')
-            .addField('`.reddit [subreddit]`', 'get media from a subreddit of your choice')
             .addField('`.bigword`', 'makes your text big')
             .setTimestamp()
 
