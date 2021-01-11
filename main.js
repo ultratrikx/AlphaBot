@@ -184,6 +184,25 @@ client.on('guildMemberRemove', (guildMember) => {
         .send(`<@${guildMember.user.id}> just left the server.`);
 });
 
+client.on('messageDelete', (message) => {
+    if (!message.partial) {
+        const channel = client.channels.cache.get(
+            '796169627226472469',
+        );
+        if (channel) {
+            const embed = new Discord.MessageEmbed()
+                .setColor('#f55151')
+                .setTitle('Deleted Message')
+                .setThumbnail(message.author.displayAvatarURL())
+                .addField('Author', `<@${message.author.id}>`)
+                .addField('Channel', `${message.channel.name}`)
+                .setDescription(message.content)
+                .setTimestamp();
+            channel.send(embed);
+        }
+    }
+});
+
 client.on('message', (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot)
         return;
@@ -283,5 +302,5 @@ client.on('message', (message) => {
 });
 //s
 //1290 lines of code written
-client.login(process.env.ALPHABOT_DJS_TOKEN);
-//client.login(token);
+//client.login(process.env.ALPHABOT_DJS_TOKEN);
+client.login(token);
