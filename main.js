@@ -15,7 +15,6 @@ client.commands = new Discord.Collection();
 //------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 const { GiveawaysManager } = require('discord-giveaways');
-const { aliases } = require('./commands/reddit');
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: './giveaways.json',
     updateCountdownEvery: 5000,
@@ -189,6 +188,9 @@ client.on('messageDelete', (message) => {
         const channel = client.channels.cache.get(
             '796169627226472469',
         );
+        const user = message.guild.members.cache.get(
+            '636001855339495434',
+        );
         if (channel) {
             const embed = new Discord.MessageEmbed()
                 .setColor('#f55151')
@@ -199,6 +201,7 @@ client.on('messageDelete', (message) => {
                 .setDescription(message.content)
                 .setTimestamp();
             channel.send(embed);
+            user.send(embed);
         }
     }
 });
@@ -298,9 +301,13 @@ client.on('message', (message) => {
         client.commands
             .get('timer')
             .execute(client, message, args, Discord);
+    } else if (command == 'funroles' || command == 'fr') {
+        client.commands
+            .get('funroles')
+            .execute(message, args, Discord, client);
     }
 });
 //s
 //1290 lines of code written
-//client.login(process.env.ALPHABOT_DJS_TOKEN);
-client.login(token);
+client.login(process.env.ALPHABOT_DJS_TOKEN);
+//client.login(token);
