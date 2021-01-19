@@ -16,7 +16,7 @@ Timer command to set a timer
 
 Remind command to set yourself a reminder
 
-__Fun Commands:__
+**Fun Commands:**
 
 Bigword command enlarges your text
 
