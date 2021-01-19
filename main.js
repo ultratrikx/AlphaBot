@@ -231,39 +231,57 @@ client.on('message', (message) => {
     const command = args.shift().toLowerCase();
 
     if (command === 'ping') {
-        client.commands.get('ping').execute(client, message, args);
+        client.commands
+            .get('ping')
+            .execute(client, message, args, Discord);
     } else if (command == 'help') {
         client.commands
             .get('help')
             .execute(client, message, args, Discord);
     } else if (command == 'redrole') {
-        client.commands.get('redrole').execute(message, args);
+        client.commands
+            .get('redrole')
+            .execute(client, message, args, Discord);
     } else if (command == 'blues') {
-        client.commands.get('blues').execute(message, args);
+        client.commands
+            .get('blues')
+            .execute(client, message, args, Discord);
     } else if (command == 'grebn') {
-        client.commands.get('grebn').execute(message, args);
+        client.commands
+            .get('grebn')
+            .execute(client, message, args, Discord);
     } else if (command == 'rameningscolour') {
-        client.commands.get('rameningscolour').execute(message, args);
+        client.commands
+            .get('rameningscolour')
+            .execute(client, message, args, Discord);
     } else if (command == 'pruple') {
-        client.commands.get('pruple').execute(message, args);
+        client.commands
+            .get('pruple')
+            .execute(client, message, args, Discord);
     } else if (command == 'admincolour') {
-        client.commands.get('admincolour').execute(message, args);
+        client.commands
+            .get('admincolour')
+            .execute(client, message, args, Discord);
     } else if (command == 'boostercolour') {
-        client.commands.get('boostercolour').execute(message, args);
+        client.commands
+            .get('boostercolour')
+            .execute(client, message, args, Discord);
     } else if (command == 'reactionrole' || command == 'rr') {
         client.commands
             .get('reactionrole')
-            .execute(message, args, Discord, client);
+            .execute(client, message, args, Discord);
     } else if (command == 'pronounroles' || command == 'pr') {
         client.commands
             .get('pronounroles')
-            .execute(message, args, Discord, client);
+            .execute(client, message, args, Discord);
     } else if (command == 'clear') {
-        client.commands.get('clear').execute(client, message, args);
+        client.commands
+            .get('clear')
+            .execute(client, message, args, Discord);
     } else if (command == 'botinfo') {
         client.commands
             .get('botinfo')
-            .execute(message, args, Discord);
+            .execute(client, message, args, Discord);
     } else if (command == 'kick') {
         client.commands
             .get('kick')
@@ -273,27 +291,45 @@ client.on('message', (message) => {
             .get('ban')
             .execute(client, message, args, Discord);
     } else if (command == 'mute') {
-        client.commands.get('mute').execute(message, args);
+        client.commands
+            .get('mute')
+            .execute(client, message, args, Discord);
     } else if (command == 'unmute') {
-        client.commands.get('unmute').execute(message, args);
+        client.commands
+            .get('unmute')
+            .execute(client, message, args, Discord);
     } else if (command == 'weather') {
-        client.commands.get('weather').execute(client, message, args);
+        client.commands
+            .get('weather')
+            .execute(client, message, args, Discord);
     } else if (
         command == 'covid' ||
         command == 'rona' ||
         command == 'corona'
     ) {
-        client.commands.get('covid').execute(client, message, args);
+        client.commands
+            .get('covid')
+            .execute(client, message, args, Discord);
     } else if (command == 'math') {
-        client.commands.get('math').execute(client, message, args);
+        client.commands
+            .get('math')
+            .execute(client, message, args, Discord);
     } else if (command == 'deaf') {
-        client.commands.get('deaf').execute(message, args);
+        client.commands
+            .get('deaf')
+            .execute(client, message, args, Discord);
     } else if (command == 'undeaf') {
-        client.commands.get('undeaf').execute(message, args);
+        client.commands
+            .get('undeaf')
+            .execute(client, message, args, Discord);
     } else if (command == 'mutes') {
-        client.commands.get('mutes').execute(message, args);
+        client.commands
+            .get('mutes')
+            .execute(client, message, args, Discord);
     } else if (command == 'unmutes') {
-        client.commands.get('unmutes').execute(message, args);
+        client.commands
+            .get('unmutes')
+            .execute(client, message, args, Discord);
     } else if (command == 'giveaway') {
         client.commands
             .get('giveaway')
@@ -321,11 +357,11 @@ client.on('message', (message) => {
     } else if (command == 'funroles' || command == 'fr') {
         client.commands
             .get('funroles')
-            .execute(message, args, Discord, client);
+            .execute(client, message, args, Discord);
     } else if (command == 'nba') {
         client.commands
             .get('nba')
-            .execute(message, args, Discord, client);
+            .execute(client, message, args, Discord);
     }
 });
 client.login(process.env.ALPHABOT_DJS_TOKEN);
