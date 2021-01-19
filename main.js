@@ -8,7 +8,7 @@ const prefix = '.';
 
 const fs = require('fs');
 
-const { token } = require('./security/config.json');
+//const { token } = require('./security/config.json');
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
