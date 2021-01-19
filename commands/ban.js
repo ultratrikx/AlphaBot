@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'ban',
     description: 'ban hammer',
-    async execute(client, message, args) {
+    async execute(client, message, args, Discord) {
         if (message.member.hasPermission('BAN_MEMBERS')) {
             const member = message.mentions.members.first(); //|| message.guild.members.cache.get(args[0]);
             const memberTarget = message.guild.members.cache.get(

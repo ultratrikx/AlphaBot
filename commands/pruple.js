@@ -1,11 +1,9 @@
 module.exports = {
     name: 'pruple',
-    description: "gives you a purple role colour",
-    execute(message, args) {
-
+    description: 'gives you a purple role colour',
+    execute(client, message, args, Discord) {
         if (message.member.roles.cache.has('785671209634234368')) {
-            message.channel.send('the og gang, nice')
-
+            message.channel.send('the og gang, nice');
         } else {
             message.channel.send('welcome to the og club');
             message.member.roles.add('785671209634234368');
@@ -16,7 +14,5 @@ module.exports = {
             message.member.roles.remove('785979645082206228');
             message.member.roles.remove('785979334204063775');
         }
-
-
-    }
-}
+    },
+};

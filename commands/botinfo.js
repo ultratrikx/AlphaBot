@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'botinfo',
     description: 'botinfo, to rip me off',
-    execute(message, args, Discord) {
+    execute(client, message, args, Discord) {
         const infoembed = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Bot Info')

@@ -8,9 +8,16 @@ const prefix = '.';
 
 const fs = require('fs');
 
-const { token } = require('./config.json');
+const { token } = require('./security/config.json');
 
 client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
+
+/*
+['command_handler', 'event_handler'].forEach((handler) => {
+    require(`./handlers/${handler}`)(client, Discord);
+});
+*/
 
 //------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
@@ -315,9 +322,11 @@ client.on('message', (message) => {
         client.commands
             .get('funroles')
             .execute(message, args, Discord, client);
+    } else if (command == 'nba') {
+        client.commands
+            .get('nba')
+            .execute(message, args, Discord, client);
     }
 });
-//s
-//1290 lines of code written
 client.login(process.env.ALPHABOT_DJS_TOKEN);
 //client.login(token);

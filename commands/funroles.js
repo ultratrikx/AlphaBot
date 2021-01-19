@@ -1,24 +1,21 @@
 module.exports = {
     name: 'funroles',
     description: 'fun roles for exclusive channel access',
-    async execute(message, args, Discord, client) {
+    async execute(client, message, args, Discord) {
         const channel = '786025091070033941';
 
         const weebRole = message.guild.roles.cache.find(
             (role) => role.name === 'weeb',
         );
-        const nerdRole = message.guild.roles.cache.find(
-            (role) => role.name === 'nerd',
-        );
+
         const artistRole = message.guild.roles.cache.find(
             (role) => role.name === 'artist',
         );
         const gamerRole = message.guild.roles.cache.find(
-            (role) => role.name === 'gamer',
+            (role) => role.name === 'gamer/nerd',
         );
 
         const weebEmoji = '✨';
-        const nerdEmoji = '💾';
         const artistEmoji = '🎨';
         const gamerEmoji = '🎮';
 
@@ -27,14 +24,12 @@ module.exports = {
             .setTitle('Get Some Fun Roles')
             .setDescription(
                 `Roles, get them here\n\n` +
-                    `${nerdEmoji} for access to tech and nerd channel\n` +
                     `${artistEmoji} for access to post in the art channel\n` +
-                    `${gamerEmoji} for access to talk in games channel\n` +
+                    `${gamerEmoji} for access to talk in games channel and talk tech and be nerd\n` +
                     `${weebEmoji} for access to anime channel`,
             );
 
         let messageEmbed = await message.channel.send(embed);
-        messageEmbed.react(nerdEmoji);
         messageEmbed.react(artistEmoji);
         messageEmbed.react(gamerEmoji);
         messageEmbed.react(weebEmoji);
@@ -61,11 +56,6 @@ module.exports = {
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.add(gamerRole);
-                }
-                if (reaction.emoji.name == nerdEmoji) {
-                    await reaction.message.guild.members.cache
-                        .get(user.id)
-                        .roles.add(nerdRole);
                 }
             } else {
                 return;
@@ -94,11 +84,6 @@ module.exports = {
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.remove(gamerRole);
-                }
-                if (reaction.emoji.name == nerdEmoji) {
-                    await reaction.message.guild.members.cache
-                        .get(user.id)
-                        .roles.remove(nerdRole);
                 }
             }
         });
