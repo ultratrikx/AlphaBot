@@ -9,48 +9,19 @@ module.exports = {
             .setColor('#db0000')
             .setTitle('Commands Help')
             .setThumbnail(
-                'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
+                'https://cdn.discordapp.com/attachments/764586697437741088/804858933373042698/Alpha2021.png',
+                //'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
             )
-            .setAuthor(
-                'Alpha Bot Commands Help',
-                'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-            )
+            .setAuthor('Alpha Bot Commands Help')
             .setDescription(
                 "Simply scroll through pages using the reaction emoji's below",
             )
             .setTimestamp();
 
-        const moderation = new Discord.MessageEmbed()
-            .setColor('#ed3746')
-            .setTitle('Moderation Commands Help')
-            .setAuthor(
-                'Alpha Bot Commands Help',
-                'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-            )
-            .setDescription('For admins only')
-            .addField(
-                '`.clear [number]`',
-                'clear set number of messages',
-            )
-            .addField(
-                '`.mute [@user] [number]m or s`',
-                'timed mute mentioned user',
-            )
-            .addField(
-                '`.unmute [@user]`',
-                'manually unmute the mentioned user',
-            )
-            .addField('`.kick [@user]`', 'kick mentioned user')
-            .addField('`.ban [@user]`', 'ban mentioned user')
-            .setTimestamp();
-
         const utility = new Discord.MessageEmbed()
             .setColor('#6b81ff')
             .setTitle('Utility Commands Help')
-            .setAuthor(
-                'Alpha Bot Commands Help',
-                'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-            )
+            .setAuthor('Alpha Bot Commands Help')
             .setDescription('Just some random stuff')
             .addField(
                 '`.weather [location]`',
@@ -61,10 +32,28 @@ module.exports = {
                 'info about their covid cases',
             )
             .addField('`.math [math equation]`', 'math calculation')
+            .addField(
+                '`.news [query]`',
+                'search up news atricles by name',
+            )
             .addField('`.botinfo`', 'information about the bot')
-            .addField('`.timer [time]`', 'set a timer')
-            .addField('`.remind [time] [reminder]`', 'set a reminder')
             .addField('`.ping`', 'to get lag info')
+            .setTimestamp();
+
+        const fun = new Discord.MessageEmbed()
+            .setColor('#e5ff00')
+            .setTitle('Fun Commands Help')
+            .setAuthor('Alpha Bot Commands Help')
+            .setDescription('Fun Commands stuff')
+            .addField('`.bigword`', 'makes your text big')
+            .addField(
+                '`.nba`',
+                "check out the scores for today's games",
+            )
+            .addField(
+                '`.nbagame [gameid]`',
+                'check the specific score for a game today',
+            )
             .addField(
                 '`.giveaway #channel [duration] [number of winners] [prize]`',
                 'host a giveaway',
@@ -79,47 +68,7 @@ module.exports = {
             )
             .setTimestamp();
 
-        const fun = new Discord.MessageEmbed()
-            .setColor('#e5ff00')
-            .setTitle('Fun Commands Help')
-            .setAuthor(
-                'Alpha Bot Commands Help',
-                'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-            )
-            .setDescription('Fun Commands stuff')
-            .addField('`.bigword`', 'makes your text big')
-            .setTimestamp();
-
-        const colourroles = new Discord.MessageEmbed()
-            .setColor('#00ffd5')
-            .setTitle('Colourful Roles Command Help')
-            .setAuthor(
-                'Alpha Bot Commands Help',
-                'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-            )
-            .setDescription('Get some colourful roles')
-            .addField('`.redrole`', 'red coloured role!')
-            .addField('`.blues`', 'blue coloured role!')
-            .addField('`.grebn`', 'easiest way to become shrek')
-            .addField('`.pruple`', 'the typo was intentional')
-            .addField('`.ramenings colour`', 'cause confuse')
-            .addField(
-                '`.adminblack`',
-                'only for admins, the darkest black',
-            )
-            .addField(
-                '`.boostercolour`',
-                'bright pink only for our serotonin boosters',
-            )
-            .setTimestamp();
-
-        const pages = [
-            mainpage,
-            colourroles,
-            utility,
-            fun,
-            moderation,
-        ];
+        const pages = [mainpage, utility, fun];
         const emojilist = ['⏪', '⏩'];
         const timeout = '120000';
 

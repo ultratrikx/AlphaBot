@@ -31,7 +31,6 @@ client.giveawaysManager = new GiveawaysManager(client, {
         reaction: '🎉',
     },
 });
-// We now have a client.giveawaysManager property to manage our giveaways!
 
 client.giveawaysManager.on(
     'giveawayReactionAdded',
@@ -106,10 +105,7 @@ client.once('ready', () => {
             const embed = new Discord.MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle('Type `.help` for more commands!')
-                .setAuthor(
-                    'Alpha Bot',
-                    'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-                )
+                .setAuthor('Alpha Bot')
                 .setDescription(
                     'Here’s a few commands to get you started\n\n' +
                         '**Normal Commands**\n' +
@@ -117,15 +113,7 @@ client.once('ready', () => {
                         'type `.weather [location]` for weather of said location\n' +
                         'type `.covid [country]` for info about their covid cases\n' +
                         'type `.math [math equation]` for calculation\n' +
-                        'type `.botinfo` for information about the bot\n\n' +
-                        '**Colour Role Commands**\n' +
-                        'type `.redrole` to get a red colour on your name\n' +
-                        'type `.blues` to get the blue colour on you name\n' +
-                        'type `.grebn` to become shrek\n' +
-                        'type `.pruple` to become pruple\n' +
-                        'type `.rameningscolour` to cause confuse\n' +
-                        'type `.admincolour` to get the black admin colour (only for admins you idiot)\n' +
-                        'type `.boostercolour` to get the booster pink colour (boost this server to unlock this)',
+                        'type `.botinfo` for information about the bot\n\n',
                 )
 
                 .setFooter(
@@ -238,34 +226,6 @@ client.on('message', (message) => {
         client.commands
             .get('help')
             .execute(client, message, args, Discord);
-    } else if (command == 'redrole') {
-        client.commands
-            .get('redrole')
-            .execute(client, message, args, Discord);
-    } else if (command == 'blues') {
-        client.commands
-            .get('blues')
-            .execute(client, message, args, Discord);
-    } else if (command == 'grebn') {
-        client.commands
-            .get('grebn')
-            .execute(client, message, args, Discord);
-    } else if (command == 'rameningscolour') {
-        client.commands
-            .get('rameningscolour')
-            .execute(client, message, args, Discord);
-    } else if (command == 'pruple') {
-        client.commands
-            .get('pruple')
-            .execute(client, message, args, Discord);
-    } else if (command == 'admincolour') {
-        client.commands
-            .get('admincolour')
-            .execute(client, message, args, Discord);
-    } else if (command == 'boostercolour') {
-        client.commands
-            .get('boostercolour')
-            .execute(client, message, args, Discord);
     } else if (command == 'reactionrole' || command == 'rr') {
         client.commands
             .get('reactionrole')
@@ -281,22 +241,6 @@ client.on('message', (message) => {
     } else if (command == 'botinfo') {
         client.commands
             .get('botinfo')
-            .execute(client, message, args, Discord);
-    } else if (command == 'kick') {
-        client.commands
-            .get('kick')
-            .execute(client, message, args, Discord);
-    } else if (command == 'ban') {
-        client.commands
-            .get('ban')
-            .execute(client, message, args, Discord);
-    } else if (command == 'mute') {
-        client.commands
-            .get('mute')
-            .execute(client, message, args, Discord);
-    } else if (command == 'unmute') {
-        client.commands
-            .get('unmute')
             .execute(client, message, args, Discord);
     } else if (command == 'weather') {
         client.commands
@@ -314,22 +258,6 @@ client.on('message', (message) => {
         client.commands
             .get('math')
             .execute(client, message, args, Discord);
-    } else if (command == 'deaf') {
-        client.commands
-            .get('deaf')
-            .execute(client, message, args, Discord);
-    } else if (command == 'undeaf') {
-        client.commands
-            .get('undeaf')
-            .execute(client, message, args, Discord);
-    } else if (command == 'mutes') {
-        client.commands
-            .get('mutes')
-            .execute(client, message, args, Discord);
-    } else if (command == 'unmutes') {
-        client.commands
-            .get('unmutes')
-            .execute(client, message, args, Discord);
     } else if (command == 'giveaway') {
         client.commands
             .get('giveaway')
@@ -346,14 +274,6 @@ client.on('message', (message) => {
         client.commands
             .get('bigword')
             .execute(client, message, args, Discord);
-    } else if (command == 'remind') {
-        client.commands
-            .get('remind')
-            .execute(client, message, args, Discord);
-    } else if (command == 'timer') {
-        client.commands
-            .get('timer')
-            .execute(client, message, args, Discord);
     } else if (command == 'funroles' || command == 'fr') {
         client.commands
             .get('funroles')
@@ -362,7 +282,18 @@ client.on('message', (message) => {
         client.commands
             .get('nba')
             .execute(client, message, args, Discord);
+    } else if (command == 'nbagame') {
+        client.commands
+            .get('nbagame')
+            .execute(client, message, args, Discord);
+    } else if (command == 'news') {
+        client.commands
+            .get('news')
+            .execute(client, message, args, Discord);
     }
 });
 client.login(process.env.ALPHABOT_DJS_TOKEN);
 //client.login(token);
+// client.login(
+//     'ODA0ODUzOTY4ODc0MjQyMDc4.YBSYqw.otr9npgcnCpcRA0f05FGzcSYra8',
+// );
