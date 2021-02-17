@@ -8,10 +8,7 @@ module.exports = {
         const mainpage = new Discord.MessageEmbed()
             .setColor('#db0000')
             .setTitle('Commands Help')
-            .setThumbnail(
-                'https://cdn.discordapp.com/attachments/764586697437741088/804858933373042698/Alpha2021.png',
-                //'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-            )
+            .setThumbnail('https://i.imgur.com/BJGhP2k.png')
             .setAuthor('Alpha Bot Commands Help')
             .setDescription(
                 "Simply scroll through pages using the reaction emoji's below",

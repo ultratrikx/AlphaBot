@@ -386,23 +386,6 @@ module.exports = {
                                 );
                                 adstats.addFields(
                                     {
-                                        name: `${vblocks}`,
-                                        value: `_ _`,
-                                        inline: true,
-                                    },
-                                    {
-                                        name: `Blocks`,
-                                        value: `_ _`,
-                                        inline: true,
-                                    },
-                                    {
-                                        name: `${hblocks}`,
-                                        value: `_ _`,
-                                        inline: true,
-                                    },
-                                );
-                                adstats.addFields(
-                                    {
                                         name: `${vsteals}`,
                                         value: `_ _`,
                                         inline: true,

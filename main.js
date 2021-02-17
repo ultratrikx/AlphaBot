@@ -294,6 +294,3 @@ client.on('message', (message) => {
 });
 client.login(process.env.ALPHABOT_DJS_TOKEN);
 //client.login(token);
-// client.login(
-//     'ODA0ODUzOTY4ODc0MjQyMDc4.YBSYqw.otr9npgcnCpcRA0f05FGzcSYra8',
-// );

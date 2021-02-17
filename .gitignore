@@ -3,5 +3,5 @@ node_modules/
 .vscode/
 events/
 handlers/
-config.json
-config.json
+security/
+OutofScope/
