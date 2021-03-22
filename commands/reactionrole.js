@@ -21,6 +21,9 @@ module.exports = {
         const reddeadRole = message.guild.roles.cache.find(
             (role) => role.name === 'red-dead',
         );
+        const organRole = message.guild.roles.cache.find(
+            (role) => role.name === 'organ',
+        );
         const serotoninpinkRole = message.guild.roles.cache.find(
             (role) => role.name === 'serotoninpink',
         );
@@ -33,6 +36,7 @@ module.exports = {
         const prupleEmoji = '🟪';
         const blackEmoji = '⬛';
         const adminblackEmoji = '⚫';
+        const organEmoji = '🟧';
         const reddeadEmoji = '🟥';
         const serotoninpinkEmoji = '🟣';
         const pollUpdatesEmoji = '❔';
@@ -47,6 +51,7 @@ module.exports = {
                     `${bluesEmoji} for blue colour\n` +
                     `${prupleEmoji} for pruple colour\n` +
                     `${blackEmoji} for black colour\n` +
+                    `${organEmoji} for black colour\n` +
                     `${pollUpdatesEmoji} to be pinged for polls`,
             );
 
@@ -56,6 +61,7 @@ module.exports = {
         messageEmbed.react(bluesEmoji);
         messageEmbed.react(prupleEmoji);
         messageEmbed.react(blackEmoji);
+        messageEmbed.react(organEmoji);
         messageEmbed.react(pollUpdatesEmoji);
 
         client.on('messageReactionAdd', async (reaction, user) => {
@@ -88,6 +94,9 @@ module.exports = {
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.remove(serotoninpinkRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(organRole);
                 }
                 if (reaction.emoji.name == reddeadEmoji) {
                     await reaction.message.guild.members.cache
@@ -134,6 +143,9 @@ module.exports = {
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.remove(serotoninpinkRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(organRole);
                 }
                 if (reaction.emoji.name == prupleEmoji) {
                     await reaction.message.guild.members.cache
@@ -157,6 +169,9 @@ module.exports = {
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.remove(serotoninpinkRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(organRole);
                 }
                 if (reaction.emoji.name == blackEmoji) {
                     await reaction.message.guild.members.cache
@@ -180,6 +195,35 @@ module.exports = {
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.remove(serotoninpinkRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(organRole);
+                }
+                if (reaction.emoji.name == organEmoji) {
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.add(blackRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(prupleRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(bluesRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(grebnRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(reddeadRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(adminblackRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(serotoninpinkRole);
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(blackRole);
                 }
                 if (reaction.emoji.name == pollUpdatesEmoji) {
                     await reaction.message.guild.members.cache
@@ -238,6 +282,11 @@ module.exports = {
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.remove(pollUpdatesRole);
+                }
+                if (reaction.emoji.name == organEmoji) {
+                    await reaction.message.guild.members.cache
+                        .get(user.id)
+                        .roles.remove(organRole);
                 }
             }
         });
