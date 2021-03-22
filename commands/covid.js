@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-
 const Discord = require('discord.js');
 
 module.exports = {
@@ -27,9 +26,19 @@ module.exports = {
                     let confirmed = data.confirmed.value.toLocaleString();
                     let recovered = data.recovered.value.toLocaleString();
                     let deaths = data.deaths.value.toLocaleString();
+                    let graph = data.image.toLocaleString();
+                    let confirmeds = data.confirmed.value;
+                    let recovereds = data.recovered.value;
+                    let deathss = data.deaths.value;
+                    let active = (
+                        confirmeds -
+                        recovereds -
+                        deathss
+                    ).toLocaleString();
 
                     const embed = new Discord.MessageEmbed()
                         .setColor('#92b094')
+                        .setImage(graph)
                         .setThumbnail(
                             'https://cdn.discordapp.com/attachments/764586697437741088/792495914819780628/Screen_Shot_2020-12-26_at_3.55.05_PM.png',
                         )
@@ -37,6 +46,7 @@ module.exports = {
                         .addField('Confirmed Cases', confirmed, '🦠')
                         .addField('Recovered', recovered, '🏥')
                         .addField('Deaths', deaths)
+                        .addField('Active Cases', active)
                         .setDescription('Stay Safe 😷');
 
                     message.channel.send(embed);
@@ -50,6 +60,14 @@ module.exports = {
                     let confirmed = data.confirmed.value.toLocaleString();
                     let recovered = data.recovered.value.toLocaleString();
                     let deaths = data.deaths.value.toLocaleString();
+                    let confirmeds = data.confirmed.value;
+                    let recovereds = data.recovered.value;
+                    let deathss = data.deaths.value;
+                    let active = (
+                        confirmeds -
+                        recovereds -
+                        deathss
+                    ).toLocaleString();
 
                     const embed = new Discord.MessageEmbed()
                         .setColor('#92b094')
@@ -62,6 +80,7 @@ module.exports = {
                         .addField('Confirmed Cases', confirmed, '🦠')
                         .addField('Recovered', recovered, '🏥')
                         .addField('Deaths', deaths)
+                        .addField('Active Cases', active)
                         .setDescription('Stay Safe 😷');
 
                     message.channel.send(embed);
