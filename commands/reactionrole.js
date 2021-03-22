@@ -202,7 +202,7 @@ module.exports = {
                 if (reaction.emoji.name == organEmoji) {
                     await reaction.message.guild.members.cache
                         .get(user.id)
-                        .roles.add(blackRole);
+                        .roles.add(organRole);
                     await reaction.message.guild.members.cache
                         .get(user.id)
                         .roles.remove(prupleRole);
