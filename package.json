@@ -1,6 +1,6 @@
 {
   "name": "alphabot",
-  "version": "1.5.13",
+  "version": "1.5.13a",
   "description": "official release of the alphabot",
   "main": "main.js",
   "scripts": {

@@ -69,16 +69,22 @@ module.exports = {
         //     ipp.setRateLimitPerUser(0);
         //     virtual.setRateLimitPerUser(0);
         // }
-
-        general.setRateLimitPerUser(180);
-        botCmnds.setRateLimitPerUser(180);
-        polls.setRateLimitPerUser(180);
-        mediaZone.setRateLimitPerUser(180);
-        art.setRateLimitPerUser(180);
-        weeb.setRateLimitPerUser(180);
-        games.setRateLimitPerUser(180);
-        gameContest.setRateLimitPerUser(180);
-        ipp.setRateLimitPerUser(180);
-        virtual.setRateLimitPerUser(180);
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) {
+            // if (message.member.roles.cache.has('689142040965152778', '665035759861891072')) {
+            return message.reply(
+                'nuh uh, this is too powerful for you to use',
+            );
+        } else {
+            general.setRateLimitPerUser(180);
+            botCmnds.setRateLimitPerUser(180);
+            polls.setRateLimitPerUser(180);
+            mediaZone.setRateLimitPerUser(180);
+            art.setRateLimitPerUser(180);
+            weeb.setRateLimitPerUser(180);
+            games.setRateLimitPerUser(180);
+            gameContest.setRateLimitPerUser(180);
+            ipp.setRateLimitPerUser(180);
+            virtual.setRateLimitPerUser(180);
+        }
     },
 };
