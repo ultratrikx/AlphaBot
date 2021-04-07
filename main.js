@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const ezlocalTime = require('ez-local-time');
 
 const client = new Discord.Client({
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
@@ -289,6 +290,14 @@ client.on('message', (message) => {
     } else if (command == 'news') {
         client.commands
             .get('news')
+            .execute(client, message, args, Discord);
+    } else if (command == 'slomo' || command == 'sm') {
+        client.commands
+            .get('slomo')
+            .execute(client, message, args, Discord);
+    } else if (command == 'unslomo' || command == 'us') {
+        client.commands
+            .get('unslomo')
             .execute(client, message, args, Discord);
     }
 });

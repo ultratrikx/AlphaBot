@@ -51,7 +51,7 @@ module.exports = {
                     `${bluesEmoji} for blue colour\n` +
                     `${prupleEmoji} for pruple colour\n` +
                     `${blackEmoji} for black colour\n` +
-                    `${organEmoji} for black colour\n` +
+                    `${organEmoji} for ~~organ~~ orange colour\n` +
                     `${pollUpdatesEmoji} to be pinged for polls`,
             );
 
