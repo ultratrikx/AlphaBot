@@ -1,12 +1,12 @@
 {
   "name": "alphabot",
-  "version": "1.5.13a",
+  "version": "1.5.13b",
   "description": "official release of the alphabot",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ultratrikx#1056",
+  "author": "ultratrikx#2526",
   "license": "ISC",
   "dependencies": {
     "ascii-table": "0.0.9",

@@ -299,6 +299,14 @@ client.on('message', (message) => {
         client.commands
             .get('unslomo')
             .execute(client, message, args, Discord);
+    } else if (command == 'a') {
+        client.commands
+            .get('a')
+            .execute(client, message, args, Discord);
+    } else if (command == 'amoguz') {
+        client.commands
+            .get('amoguz')
+            .execute(client, message, args, Discord);
     }
 });
 client.login(process.env.ALPHABOT_DJS_TOKEN);
