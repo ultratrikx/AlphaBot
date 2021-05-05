@@ -75,16 +75,16 @@ module.exports = {
                 'nuh uh, this is too powerful for you to use',
             );
         } else {
-            general.setRateLimitPerUser(180);
-            botCmnds.setRateLimitPerUser(180);
-            polls.setRateLimitPerUser(180);
-            mediaZone.setRateLimitPerUser(180);
-            art.setRateLimitPerUser(180);
-            weeb.setRateLimitPerUser(180);
-            games.setRateLimitPerUser(180);
-            gameContest.setRateLimitPerUser(180);
-            ipp.setRateLimitPerUser(180);
-            virtual.setRateLimitPerUser(180);
+            general.setRateLimitPerUser(90);
+            botCmnds.setRateLimitPerUser(90);
+            polls.setRateLimitPerUser(90);
+            mediaZone.setRateLimitPerUser(90);
+            art.setRateLimitPerUser(90);
+            weeb.setRateLimitPerUser(90);
+            games.setRateLimitPerUser(90);
+            gameContest.setRateLimitPerUser(90);
+            ipp.setRateLimitPerUser(90);
+            virtual.setRateLimitPerUser(90);
         }
     },
 };
