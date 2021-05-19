@@ -1,6 +1,6 @@
 {
   "name": "alphabot",
-  "version": "1.5.14",
+  "version": "1.5.15",
   "description": "official release of the alphabot",
   "main": "main.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "ultratrikx#2526",
   "license": "ISC",
   "dependencies": {
-    "discord-giveaways": "^4.5.1",
+    "discord-giveaways": "^4.4.1",
     "discord.js": "^12.5.3",
     "discord.js-pagination": "^1.0.3",
     "ez-local-time": "^1.0.15",
