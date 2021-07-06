@@ -4,7 +4,7 @@ const client = new Discord.Client({
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
 });
 // ! REMEMBER TO COMMENT OUT THIS FILE WHEN RUNNING
-const { token } = require('./security/config.json');
+//const { token } = require('./security/config.json');
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
@@ -54,6 +54,6 @@ client.once('ready', () => {
     });
 });
 
-//client.login(process.env.ALPHABOT_DJS_TOKEN);
-client.login(token);
+client.login(process.env.ALPHABOT_DJS_TOKEN);
+//client.login(token);
 // ! REMEMBER TO COMMENT OUT THE LINE ABOVE BEFORE RUNNING
