@@ -1,5 +1,4 @@
 const { version } = require('discord.js');
-const Discord = require('discord.js');
 
 module.exports = {
     name: 'botinfo',
@@ -15,13 +14,13 @@ module.exports = {
             .setDescription(
                 'Here’s more Info About Me! (so you can hack me and do illegal things)\n\n' +
                     '**Name** = AlphaBot\n' +
-                    `**Version** = 1.5.15\n` +
+                    `**Version** = 2.00\n` +
                     '**Description** = this is bot, do things with bot, do `.help` for help (with bot obv)\n' +
-                    '**Code Language** = JavaScript(.js) and JavaScript Object Notation(.JSON)\n' +
+                    '**Code Language** = JavaScript(.js) with the Node.js Framework\n' +
                     `**Discord.js Version** = ${version}\n` +
                     '**Bot User** = Alpha Bot#0038\n' +
-                    '**Bot Owner** = ultratrikx#1056\n' +
-                    //s + '**Bot Token** = ||<a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200>||\n'
+                    '**Bot Owner** = ultratrikx#2605\n' +
+                    /* **Bot Token** = ||<a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200>||\n' +*/
                     '**Github** = https://github.com/ultratrikx/AlphaBot \n\n' +
                     'Hosted on Heroku',
             )

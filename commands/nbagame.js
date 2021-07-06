@@ -1,12 +1,10 @@
 const fetch = require('node-fetch');
 
 const pagination = require('discord.js-pagination');
-const Discord = require('discord.js');
 
 module.exports = {
     name: 'nbagame',
-    description:
-        'tracks COVID-19 of a specific country or the entire world',
+    description: 'specific nba game details',
 
     async execute(client, message, args, Discord) {
         let gameid = args.join(' ');
@@ -60,116 +58,201 @@ module.exports = {
                 .then((response) => response.json())
                 .then((data) => {
                     data.links.currentDate.toLocaleString();
-                    const date = data.links.currentDate.toLocaleString();
+                    const date =
+                        data.links.currentDate.toLocaleString();
                     fetch(
                         `http://data.nba.net/10s/prod/v1/${date}/${gameid}_boxscore.json`,
                     )
                         .then((response) => response.json())
                         .then((data) => {
                             try {
-                                let arena = data.basicGameData.arena.name.toLocaleString();
-                                let city = data.basicGameData.arena.city.toLocaleString();
-                                let state = data.basicGameData.arena.stateAbbr.toLocaleString();
-                                let country = data.basicGameData.arena.country.toLocaleString();
-                                let time = data.basicGameData.startTimeEastern.toLocaleString();
+                                let arena =
+                                    data.basicGameData.arena.name.toLocaleString();
+                                let city =
+                                    data.basicGameData.arena.city.toLocaleString();
+                                let state =
+                                    data.basicGameData.arena.stateAbbr.toLocaleString();
+                                let country =
+                                    data.basicGameData.arena.country.toLocaleString();
+                                let time =
+                                    data.basicGameData.startTimeEastern.toLocaleString();
 
-                                let clock = data.basicGameData.clock.toLocaleString();
-                                let period = data.basicGameData.period.current.toLocaleString();
-                                let halftime = data.basicGameData.period.isHalftime.toLocaleString();
-                                let periodend = data.basicGameData.period.isEndOfPeriod.toLocaleString();
-                                let gameover = data.basicGameData.isRecapArticleAvail.toLocaleString();
+                                let clock =
+                                    data.basicGameData.clock.toLocaleString();
+                                let period =
+                                    data.basicGameData.period.current.toLocaleString();
+                                let halftime =
+                                    data.basicGameData.period.isHalftime.toLocaleString();
+                                let periodend =
+                                    data.basicGameData.period.isEndOfPeriod.toLocaleString();
+                                let gameover =
+                                    data.basicGameData.isRecapArticleAvail.toLocaleString();
 
-                                let attendence = data.basicGameData.attendance.toLocaleString();
+                                let attendence =
+                                    data.basicGameData.attendance.toLocaleString();
 
-                                let vteam = data.basicGameData.vTeam.triCode.toLocaleString();
-                                let vwins = data.basicGameData.vTeam.win.toLocaleString();
-                                let vloss = data.basicGameData.vTeam.loss.toLocaleString();
-                                let vscore = data.basicGameData.vTeam.score.toLocaleString();
-                                let vlinescore1 = data.basicGameData.vTeam.linescore[0].score.toLocaleString();
-                                let vlinescore2 = data.basicGameData.vTeam.linescore[1].score.toLocaleString();
-                                let vlinescore3 = data.basicGameData.vTeam.linescore[2].score.toLocaleString();
-                                let vlinescore4 = data.basicGameData.vTeam.linescore[3].score.toLocaleString();
+                                let vteam =
+                                    data.basicGameData.vTeam.triCode.toLocaleString();
+                                let vwins =
+                                    data.basicGameData.vTeam.win.toLocaleString();
+                                let vloss =
+                                    data.basicGameData.vTeam.loss.toLocaleString();
+                                let vscore =
+                                    data.basicGameData.vTeam.score.toLocaleString();
+                                let vlinescore1 =
+                                    data.basicGameData.vTeam.linescore[0].score.toLocaleString();
+                                let vlinescore2 =
+                                    data.basicGameData.vTeam.linescore[1].score.toLocaleString();
+                                let vlinescore3 =
+                                    data.basicGameData.vTeam.linescore[2].score.toLocaleString();
+                                let vlinescore4 =
+                                    data.basicGameData.vTeam.linescore[3].score.toLocaleString();
 
-                                let hteam = data.basicGameData.hTeam.triCode.toLocaleString();
-                                let hwins = data.basicGameData.hTeam.win.toLocaleString();
-                                let hloss = data.basicGameData.hTeam.loss.toLocaleString();
-                                let hscore = data.basicGameData.hTeam.score.toLocaleString();
+                                let hteam =
+                                    data.basicGameData.hTeam.triCode.toLocaleString();
+                                let hwins =
+                                    data.basicGameData.hTeam.win.toLocaleString();
+                                let hloss =
+                                    data.basicGameData.hTeam.loss.toLocaleString();
+                                let hscore =
+                                    data.basicGameData.hTeam.score.toLocaleString();
 
-                                let hlinescore1 = data.basicGameData.hTeam.linescore[0].score.toLocaleString();
-                                let hlinescore2 = data.basicGameData.hTeam.linescore[1].score.toLocaleString();
-                                let hlinescore3 = data.basicGameData.hTeam.linescore[2].score.toLocaleString();
-                                let hlinescore4 = data.basicGameData.hTeam.linescore[3].score.toLocaleString();
+                                let hlinescore1 =
+                                    data.basicGameData.hTeam.linescore[0].score.toLocaleString();
+                                let hlinescore2 =
+                                    data.basicGameData.hTeam.linescore[1].score.toLocaleString();
+                                let hlinescore3 =
+                                    data.basicGameData.hTeam.linescore[2].score.toLocaleString();
+                                let hlinescore4 =
+                                    data.basicGameData.hTeam.linescore[3].score.toLocaleString();
 
-                                let vbroadcast = data.basicGameData.watch.broadcast.broadcasters.vTeam[0].longName.toLocaleString();
-                                let hbroadcast = data.basicGameData.watch.broadcast.broadcasters.hTeam[0].longName.toLocaleString();
+                                let vbroadcast =
+                                    data.basicGameData.watch.broadcast.broadcasters.vTeam[0].longName.toLocaleString();
+                                let hbroadcast =
+                                    data.basicGameData.watch.broadcast.broadcasters.hTeam[0].longName.toLocaleString();
 
-                                let vfastbreak = data.stats.vTeam.fastBreakPoints.toLocaleString();
-                                let vpinp = data.stats.vTeam.pointsInPaint.toLocaleString();
-                                let vlead = data.stats.vTeam.biggestLead.toLocaleString();
-                                let v2chance = data.stats.vTeam.secondChancePoints.toLocaleString();
-                                let vpofft = data.stats.vTeam.pointsOffTurnovers.toLocaleString();
-                                let vrun = data.stats.vTeam.longestRun.toLocaleString();
+                                let vfastbreak =
+                                    data.stats.vTeam.fastBreakPoints.toLocaleString();
+                                let vpinp =
+                                    data.stats.vTeam.pointsInPaint.toLocaleString();
+                                let vlead =
+                                    data.stats.vTeam.biggestLead.toLocaleString();
+                                let v2chance =
+                                    data.stats.vTeam.secondChancePoints.toLocaleString();
+                                let vpofft =
+                                    data.stats.vTeam.pointsOffTurnovers.toLocaleString();
+                                let vrun =
+                                    data.stats.vTeam.longestRun.toLocaleString();
 
-                                let vfgm = data.stats.vTeam.totals.fgm.toLocaleString();
-                                let vfga = data.stats.vTeam.totals.fga.toLocaleString();
-                                let vfgp = data.stats.vTeam.totals.fgp.toLocaleString();
-                                let vfta = data.stats.vTeam.totals.fta.toLocaleString();
-                                let vftm = data.stats.vTeam.totals.ftm.toLocaleString();
-                                let vftp = data.stats.vTeam.totals.ftp.toLocaleString();
-                                let vtpm = data.stats.vTeam.totals.tpm.toLocaleString();
-                                let vtpa = data.stats.vTeam.totals.tpa.toLocaleString();
-                                let vtpp = data.stats.vTeam.totals.tpp.toLocaleString();
+                                let vfgm =
+                                    data.stats.vTeam.totals.fgm.toLocaleString();
+                                let vfga =
+                                    data.stats.vTeam.totals.fga.toLocaleString();
+                                let vfgp =
+                                    data.stats.vTeam.totals.fgp.toLocaleString();
+                                let vfta =
+                                    data.stats.vTeam.totals.fta.toLocaleString();
+                                let vftm =
+                                    data.stats.vTeam.totals.ftm.toLocaleString();
+                                let vftp =
+                                    data.stats.vTeam.totals.ftp.toLocaleString();
+                                let vtpm =
+                                    data.stats.vTeam.totals.tpm.toLocaleString();
+                                let vtpa =
+                                    data.stats.vTeam.totals.tpa.toLocaleString();
+                                let vtpp =
+                                    data.stats.vTeam.totals.tpp.toLocaleString();
 
-                                let voffReb = data.stats.vTeam.totals.offReb.toLocaleString();
-                                let vdefReb = data.stats.vTeam.totals.defReb.toLocaleString();
-                                let vtotReb = data.stats.vTeam.totals.totReb.toLocaleString();
+                                let voffReb =
+                                    data.stats.vTeam.totals.offReb.toLocaleString();
+                                let vdefReb =
+                                    data.stats.vTeam.totals.defReb.toLocaleString();
+                                let vtotReb =
+                                    data.stats.vTeam.totals.totReb.toLocaleString();
 
-                                let vassists = data.stats.vTeam.totals.assists.toLocaleString();
-                                let vpfouls = data.stats.vTeam.totals.pFouls.toLocaleString();
-                                let vsteals = data.stats.vTeam.totals.steals.toLocaleString();
-                                let vturnovers = data.stats.vTeam.totals.turnovers.toLocaleString();
-                                let vblocks = data.stats.vTeam.totals.blocks.toLocaleString();
+                                let vassists =
+                                    data.stats.vTeam.totals.assists.toLocaleString();
+                                let vpfouls =
+                                    data.stats.vTeam.totals.pFouls.toLocaleString();
+                                let vsteals =
+                                    data.stats.vTeam.totals.steals.toLocaleString();
+                                let vturnovers =
+                                    data.stats.vTeam.totals.turnovers.toLocaleString();
+                                let vblocks =
+                                    data.stats.vTeam.totals.blocks.toLocaleString();
 
-                                let vplead = data.stats.vTeam.leaders.points.value.toLocaleString();
-                                let vpleaderf = data.stats.vTeam.leaders.points.players[0].firstName.toLocaleString();
-                                let vpleaderl = data.stats.vTeam.leaders.points.players[0].lastName.toLocaleString();
+                                let vplead =
+                                    data.stats.vTeam.leaders.points.value.toLocaleString();
+                                let vpleaderf =
+                                    data.stats.vTeam.leaders.points.players[0].firstName.toLocaleString();
+                                let vpleaderl =
+                                    data.stats.vTeam.leaders.points.players[0].lastName.toLocaleString();
 
-                                let hfastbreak = data.stats.hTeam.fastBreakPoints.toLocaleString();
-                                let hpinp = data.stats.hTeam.pointsInPaint.toLocaleString();
-                                let hlead = data.stats.hTeam.biggestLead.toLocaleString();
-                                let h2chance = data.stats.hTeam.secondChancePoints.toLocaleString();
-                                let hpofft = data.stats.hTeam.pointsOffTurnovers.toLocaleString();
-                                let hrun = data.stats.hTeam.longestRun.toLocaleString();
+                                let hfastbreak =
+                                    data.stats.hTeam.fastBreakPoints.toLocaleString();
+                                let hpinp =
+                                    data.stats.hTeam.pointsInPaint.toLocaleString();
+                                let hlead =
+                                    data.stats.hTeam.biggestLead.toLocaleString();
+                                let h2chance =
+                                    data.stats.hTeam.secondChancePoints.toLocaleString();
+                                let hpofft =
+                                    data.stats.hTeam.pointsOffTurnovers.toLocaleString();
+                                let hrun =
+                                    data.stats.hTeam.longestRun.toLocaleString();
 
-                                let hfgm = data.stats.hTeam.totals.fgm.toLocaleString();
-                                let hfga = data.stats.hTeam.totals.fga.toLocaleString();
-                                let hfgp = data.stats.hTeam.totals.fgp.toLocaleString();
-                                let hfta = data.stats.hTeam.totals.fta.toLocaleString();
-                                let hftm = data.stats.hTeam.totals.ftm.toLocaleString();
-                                let hftp = data.stats.hTeam.totals.ftp.toLocaleString();
-                                let htpm = data.stats.hTeam.totals.tpm.toLocaleString();
-                                let htpa = data.stats.hTeam.totals.tpa.toLocaleString();
-                                let htpp = data.stats.hTeam.totals.tpp.toLocaleString();
+                                let hfgm =
+                                    data.stats.hTeam.totals.fgm.toLocaleString();
+                                let hfga =
+                                    data.stats.hTeam.totals.fga.toLocaleString();
+                                let hfgp =
+                                    data.stats.hTeam.totals.fgp.toLocaleString();
+                                let hfta =
+                                    data.stats.hTeam.totals.fta.toLocaleString();
+                                let hftm =
+                                    data.stats.hTeam.totals.ftm.toLocaleString();
+                                let hftp =
+                                    data.stats.hTeam.totals.ftp.toLocaleString();
+                                let htpm =
+                                    data.stats.hTeam.totals.tpm.toLocaleString();
+                                let htpa =
+                                    data.stats.hTeam.totals.tpa.toLocaleString();
+                                let htpp =
+                                    data.stats.hTeam.totals.tpp.toLocaleString();
 
-                                let hoffReb = data.stats.hTeam.totals.offReb.toLocaleString();
-                                let hdefReb = data.stats.hTeam.totals.defReb.toLocaleString();
-                                let htotReb = data.stats.hTeam.totals.totReb.toLocaleString();
+                                let hoffReb =
+                                    data.stats.hTeam.totals.offReb.toLocaleString();
+                                let hdefReb =
+                                    data.stats.hTeam.totals.defReb.toLocaleString();
+                                let htotReb =
+                                    data.stats.hTeam.totals.totReb.toLocaleString();
 
-                                let hassists = data.stats.hTeam.totals.assists.toLocaleString();
-                                let hpfouls = data.stats.hTeam.totals.pFouls.toLocaleString();
-                                let hsteals = data.stats.hTeam.totals.steals.toLocaleString();
-                                let hturnovers = data.stats.hTeam.totals.turnovers.toLocaleString();
-                                let hblocks = data.stats.hTeam.totals.blocks.toLocaleString();
-                                let hplead = data.stats.hTeam.leaders.points.value.toLocaleString();
-                                let hpleaderf = data.stats.hTeam.leaders.points.players[0].firstName.toLocaleString();
-                                let hpleaderl = data.stats.hTeam.leaders.points.players[0].lastName.toLocaleString();
+                                let hassists =
+                                    data.stats.hTeam.totals.assists.toLocaleString();
+                                let hpfouls =
+                                    data.stats.hTeam.totals.pFouls.toLocaleString();
+                                let hsteals =
+                                    data.stats.hTeam.totals.steals.toLocaleString();
+                                let hturnovers =
+                                    data.stats.hTeam.totals.turnovers.toLocaleString();
+                                let hblocks =
+                                    data.stats.hTeam.totals.blocks.toLocaleString();
+                                let hplead =
+                                    data.stats.hTeam.leaders.points.value.toLocaleString();
+                                let hpleaderf =
+                                    data.stats.hTeam.leaders.points.players[0].firstName.toLocaleString();
+                                let hpleaderl =
+                                    data.stats.hTeam.leaders.points.players[0].lastName.toLocaleString();
 
-                                const overview = new Discord.MessageEmbed()
-                                    .setColor('#535ded')
-                                    .setTitle(`${vteam} @ ${hteam}`)
-                                    .setDescription(
-                                        `${attendence} people attending the game at ${arena}, ${city}, ${state}, ${country}`,
-                                    );
+                                const overview =
+                                    new Discord.MessageEmbed()
+                                        .setColor('#535ded')
+                                        .setTitle(
+                                            `${vteam} @ ${hteam}`,
+                                        )
+                                        .setDescription(
+                                            `${attendence} people attending the game at ${arena}, ${city}, ${state}, ${country}`,
+                                        );
                                 if (gameover !== 'false') {
                                     overview.addField(
                                         '**Final**',
@@ -241,26 +324,27 @@ module.exports = {
                                 );
                                 overview.setTimestamp();
 
-                                const linescore = new Discord.MessageEmbed()
-                                    .setTitle(`Linescore`)
-                                    .setColor('#535ded')
-                                    .addFields(
-                                        {
-                                            name: `${teamLogo[vteam]}  ${vteam} \`${vwins} - ${vloss}\``,
-                                            value: `${vscore} PTS`,
-                                            inline: true,
-                                        },
-                                        {
-                                            name: `Quarter`,
-                                            value: `PTS`,
-                                            inline: true,
-                                        },
-                                        {
-                                            name: `${teamLogo[hteam]}  ${hteam} \`${hwins} - ${hloss}\``,
-                                            value: `${hscore} PTS`,
-                                            inline: true,
-                                        },
-                                    );
+                                const linescore =
+                                    new Discord.MessageEmbed()
+                                        .setTitle(`Linescore`)
+                                        .setColor('#535ded')
+                                        .addFields(
+                                            {
+                                                name: `${teamLogo[vteam]}  ${vteam} \`${vwins} - ${vloss}\``,
+                                                value: `${vscore} PTS`,
+                                                inline: true,
+                                            },
+                                            {
+                                                name: `Quarter`,
+                                                value: `PTS`,
+                                                inline: true,
+                                            },
+                                            {
+                                                name: `${teamLogo[hteam]}  ${hteam} \`${hwins} - ${hloss}\``,
+                                                value: `${hscore} PTS`,
+                                                inline: true,
+                                            },
+                                        );
                                 linescore.addFields(
                                     {
                                         name: `_ _`,
@@ -330,9 +414,10 @@ module.exports = {
                                     },
                                 );
 
-                                const adstats = new Discord.MessageEmbed()
-                                    .setTitle(`Stats`)
-                                    .setColor('#535ded');
+                                const adstats =
+                                    new Discord.MessageEmbed()
+                                        .setTitle(`Stats`)
+                                        .setColor('#535ded');
                                 adstats.addFields(
                                     {
                                         name: `${vtotReb}`,
@@ -453,9 +538,10 @@ module.exports = {
                                     },
                                 );
 
-                                const stats = new Discord.MessageEmbed()
-                                    .setTitle(`Stats`)
-                                    .setColor('#535ded');
+                                const stats =
+                                    new Discord.MessageEmbed()
+                                        .setTitle(`Stats`)
+                                        .setColor('#535ded');
                                 stats.addFields(
                                     {
                                         name: `${teamLogo[vteam]}`,
@@ -525,9 +611,10 @@ module.exports = {
                                     },
                                 );
 
-                                const extra = new Discord.MessageEmbed()
-                                    .setTitle(`Stats`)
-                                    .setColor('#535ded');
+                                const extra =
+                                    new Discord.MessageEmbed()
+                                        .setTitle(`Stats`)
+                                        .setColor('#535ded');
                                 extra.addFields(
                                     {
                                         name: `${teamLogo[vteam]}  ${vteam} \`${vwins} - ${vloss}\``,

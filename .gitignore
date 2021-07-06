@@ -1,7 +1,5 @@
 node_modules/
 .DS_Store
 .vscode/
-events/
-handlers/
 security/
 OutofScope/

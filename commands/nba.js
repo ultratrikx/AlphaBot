@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const Discord = require('discord.js');
 const pagination = require('discord.js-pagination');
 
 module.exports = {

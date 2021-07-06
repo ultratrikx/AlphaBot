@@ -1,5 +1,6 @@
 module.exports = {
     name: 'funroles',
+    aliases: ['fr'],
     description: 'fun roles for exclusive channel access',
     async execute(client, message, args, Discord) {
         const channel = '786025091070033941';

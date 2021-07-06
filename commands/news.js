@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-const Discord = require('discord.js');
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('6d6b96d493104097bcc65d7634d02139');
 const pagination = require('discord.js-pagination');
@@ -42,22 +40,26 @@ module.exports = {
                             let thumbnail =
                                 response.articles[0].urlToImage;
 
-                            const mainpage = new Discord.MessageEmbed()
-                                .setColor('#db0000')
-                                .setTitle(`Top Results for ${query}`)
-                                .setThumbnail(
-                                    'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-                                )
-                                .setDescription(
-                                    "Simply scroll through pages using the reaction emoji's below",
-                                );
-                            const articleone = new Discord.MessageEmbed()
-                                .setColor('#3fcce8')
-                                .setTitle(title)
-                                .setDescription(desc)
-                                .setAuthor(`By ${author}`)
-                                .setURL(url)
-                                .setImage(thumbnail);
+                            const mainpage =
+                                new Discord.MessageEmbed()
+                                    .setColor('#db0000')
+                                    .setTitle(
+                                        `Top Results for ${query}`,
+                                    )
+                                    .setThumbnail(
+                                        'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
+                                    )
+                                    .setDescription(
+                                        "Simply scroll through pages using the reaction emoji's below",
+                                    );
+                            const articleone =
+                                new Discord.MessageEmbed()
+                                    .setColor('#3fcce8')
+                                    .setTitle(title)
+                                    .setDescription(desc)
+                                    .setAuthor(`By ${author}`)
+                                    .setURL(url)
+                                    .setImage(thumbnail);
 
                             const pages = [mainpage, articleone];
                             const emojilist = ['⏪', '⏩'];
@@ -87,29 +89,34 @@ module.exports = {
                             let thumbnail2 =
                                 response.articles[1].urlToImage;
 
-                            const mainpage = new Discord.MessageEmbed()
-                                .setColor('#db0000')
-                                .setTitle(`Top Results for ${query}`)
-                                .setThumbnail(
-                                    'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-                                )
-                                .setDescription(
-                                    "Simply scroll through pages using the reaction emoji's below",
-                                );
-                            const articleone = new Discord.MessageEmbed()
-                                .setColor('#3fcce8')
-                                .setTitle(title)
-                                .setDescription(desc)
-                                .setAuthor(`By ${author}`)
-                                .setURL(url)
-                                .setImage(thumbnail);
-                            const articletwo = new Discord.MessageEmbed()
-                                .setColor('#3fcce8')
-                                .setTitle(title2)
-                                .setDescription(desc2)
-                                .setAuthor(author2)
-                                .setURL(url2)
-                                .setImage(thumbnail2);
+                            const mainpage =
+                                new Discord.MessageEmbed()
+                                    .setColor('#db0000')
+                                    .setTitle(
+                                        `Top Results for ${query}`,
+                                    )
+                                    .setThumbnail(
+                                        'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
+                                    )
+                                    .setDescription(
+                                        "Simply scroll through pages using the reaction emoji's below",
+                                    );
+                            const articleone =
+                                new Discord.MessageEmbed()
+                                    .setColor('#3fcce8')
+                                    .setTitle(title)
+                                    .setDescription(desc)
+                                    .setAuthor(`By ${author}`)
+                                    .setURL(url)
+                                    .setImage(thumbnail);
+                            const articletwo =
+                                new Discord.MessageEmbed()
+                                    .setColor('#3fcce8')
+                                    .setTitle(title2)
+                                    .setDescription(desc2)
+                                    .setAuthor(author2)
+                                    .setURL(url2)
+                                    .setImage(thumbnail2);
 
                             const pages = [
                                 mainpage,
@@ -151,36 +158,42 @@ module.exports = {
                             let thumbnail3 =
                                 response.articles[2].urlToImage;
 
-                            const mainpage = new Discord.MessageEmbed()
-                                .setColor('#db0000')
-                                .setTitle(`Top Results for ${query}`)
-                                .setThumbnail(
-                                    'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
-                                )
-                                .setDescription(
-                                    "Simply scroll through pages using the reaction emoji's below",
-                                );
-                            const articleone = new Discord.MessageEmbed()
-                                .setColor('#3fcce8')
-                                .setTitle(title)
-                                .setDescription(desc)
-                                .setAuthor(`By ${author}`)
-                                .setURL(url)
-                                .setImage(thumbnail);
-                            const articletwo = new Discord.MessageEmbed()
-                                .setColor('#3fcce8')
-                                .setTitle(title2)
-                                .setDescription(desc2)
-                                .setAuthor(author2)
-                                .setURL(url2)
-                                .setImage(thumbnail2);
-                            const articlethree = new Discord.MessageEmbed()
-                                .setColor('#3fcce8')
-                                .setTitle(title3)
-                                .setDescription(desc3)
-                                .setAuthor(author3)
-                                .setURL(url3)
-                                .setImage(thumbnail3);
+                            const mainpage =
+                                new Discord.MessageEmbed()
+                                    .setColor('#db0000')
+                                    .setTitle(
+                                        `Top Results for ${query}`,
+                                    )
+                                    .setThumbnail(
+                                        'https://cdn.discordapp.com/avatars/702514788340858892/d72991959325a20107bb0efb61118361.png?size=1024',
+                                    )
+                                    .setDescription(
+                                        "Simply scroll through pages using the reaction emoji's below",
+                                    );
+                            const articleone =
+                                new Discord.MessageEmbed()
+                                    .setColor('#3fcce8')
+                                    .setTitle(title)
+                                    .setDescription(desc)
+                                    .setAuthor(`By ${author}`)
+                                    .setURL(url)
+                                    .setImage(thumbnail);
+                            const articletwo =
+                                new Discord.MessageEmbed()
+                                    .setColor('#3fcce8')
+                                    .setTitle(title2)
+                                    .setDescription(desc2)
+                                    .setAuthor(author2)
+                                    .setURL(url2)
+                                    .setImage(thumbnail2);
+                            const articlethree =
+                                new Discord.MessageEmbed()
+                                    .setColor('#3fcce8')
+                                    .setTitle(title3)
+                                    .setDescription(desc3)
+                                    .setAuthor(author3)
+                                    .setURL(url3)
+                                    .setImage(thumbnail3);
 
                             const pages = [
                                 mainpage,

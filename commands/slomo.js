@@ -1,9 +1,7 @@
-const ezlocalTime = require('ez-local-time');
-const Discord = require('discord.js');
-
 module.exports = {
     name: 'slomo',
-    description: 'this command does math',
+    aliases: ['sm'],
+    description: 'starts slow mode on channels for the school day',
 
     async execute(client, message, args, Discord) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) {
@@ -11,7 +9,6 @@ module.exports = {
                 'nuh uh, this is too powerful for you to use',
             );
         } else {
-            const dateobject = ezlocalTime('America/Toronto');
             const general = client.channels.cache.get(
                 '796140427878858763',
             );
@@ -42,57 +39,11 @@ module.exports = {
             const virtual = client.channels.cache.get(
                 '798235076776296468',
             );
-            // for (let i = 0; i < 1000000000; i++) {
-            //     if (
-            //         dateobject.day == 'Monday' ||
-            //         'Tuesday' ||
-            //         'Wednesday' ||
-            //         'Thursday' ||
-            //         ('Friday' && dateobject.time == ' 8:45:00 AM') ||
-            //         ' 11:05:00 AM' ||
-            //         (' 1:25:00 PM' && dateobject.month !== 'July') ||
-            //         'August'
-            //     ) {
-            //         general.setRateLimitPerUser(90);
-            //         botCmnds.setRateLimitPerUser(90);
-            //         polls.setRateLimitPerUser(90);
-            //         mediaZone.setRateLimitPerUser(90);
-            //         art.setRateLimitPerUser(90);
-            //         weeb.setRateLimitPerUser(90);
-            //         games.setRateLimitPerUser(90);
-            //         gameContest.setRateLimitPerUser(90);
-            //         ipp.setRateLimitPerUser(90);
-            //         virtual.setRateLimitPerUser(90);
-            //     }
-            //     if (
-            //         dateobject.day == 'Monday' ||
-            //         'Tuesday' ||
-            //         'Wednesday' ||
-            //         'Thursday' ||
-            //         ('Friday' && dateobject.time == ' 10:25:00 AM') ||
-            //         ' 12:45:00 PM' ||
-            //         (' 3:05:00 PM' && dateobject.month !== 'July') ||
-            //         'August'
-            //     ) {
-            //         general.setRateLimitPerUser(0);
-            //         botCmnds.setRateLimitPerUser(0);
-            //         polls.setRateLimitPerUser(0);
-            //         mediaZone.setRateLimitPerUser(0);
-            //         art.setRateLimitPerUser(0);
-            //         weeb.setRateLimitPerUser(0);
-            //         games.setRateLimitPerUser(0);
-            //         gameContest.setRateLimitPerUser(0);
-            //         ipp.setRateLimitPerUser(0);
-            //         virtual.setRateLimitPerUser(0);
-            //     }
-            // }
-
             function sleep(ms) {
                 return new Promise((resolve) =>
                     setTimeout(resolve, ms),
                 );
             }
-
             async function slomoSet() {
                 general.setRateLimitPerUser(90);
                 botCmnds.setRateLimitPerUser(90);

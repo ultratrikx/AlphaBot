@@ -2,6 +2,7 @@ const figlet = require('figlet');
 
 module.exports = {
     name: 'bigword',
+    aliases: ['bw'],
     description: 'makes your text big',
 
     async execute(client, message, args, Discord) {

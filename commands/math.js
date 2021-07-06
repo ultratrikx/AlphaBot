@@ -1,12 +1,8 @@
 const math = require('mathjs');
 
-const Discord = require('discord.js');
-const { description, execute } = require('./help');
-
 module.exports = {
     name: 'math',
     description: 'this command does math',
-
     async execute(client, message, args, Discord) {
         if (!args[0])
             return message.channel.send(

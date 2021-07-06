@@ -1,5 +1,6 @@
 module.exports = {
     name: 'pronounroles',
+    aliases: ['pr'],
     description: 'reaction roles, but for pronoun roles',
     async execute(client, message, args, Discord) {
         const channel = '786025091070033941';

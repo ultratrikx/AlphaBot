@@ -19,7 +19,6 @@ module.exports = {
             return message.reply('delete at least 1 message');
 
         if (!message.member.hasPermission('MANAGE_MESSAGES')) {
-            // if (message.member.roles.cache.has('689142040965152778', '665035759861891072')) {
             return message.reply(
                 'nuh uh, this is too powerful for you to use',
             );

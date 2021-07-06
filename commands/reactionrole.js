@@ -1,6 +1,7 @@
 module.exports = {
     name: 'reactionrole',
-    description: 'this is a blues command!',
+    aliases: ['rr'],
+    description: 'colour roles reaction command',
     async execute(client, message, args, Discord) {
         const channel = '786025091070033941';
         const grebnRole = message.guild.roles.cache.find(

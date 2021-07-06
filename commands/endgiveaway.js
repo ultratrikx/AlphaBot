@@ -1,6 +1,7 @@
 const ms = require('ms');
 module.exports = {
     name: 'endgiveaway',
+    aliases: ['endg'],
     description: 'ends an existing giveaway',
     execute(client, message, args, Discord) {
         // If the member doesn't have enough permissions

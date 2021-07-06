@@ -1,5 +1,4 @@
 const pagination = require('discord.js-pagination');
-const Discord = require('discord.js');
 
 module.exports = {
     name: 'help',

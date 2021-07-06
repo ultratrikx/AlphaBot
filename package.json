@@ -1,18 +1,17 @@
 {
   "name": "alphabot",
-  "version": "1.5.15",
+  "version": "2.00",
   "description": "official release of the alphabot",
   "main": "main.js",
   "scripts": {
     "test": "node main.js"
   },
-  "author": "ultratrikx#2526",
+  "author": "ultratrikx#2605",
   "license": "ISC",
   "dependencies": {
     "discord-giveaways": "^4.4.1",
     "discord.js": "^12.5.3",
     "discord.js-pagination": "^1.0.3",
-    "ez-local-time": "^1.0.15",
     "figlet": "^1.5.0",
     "mathjs": "^8.1.0",
     "ms": "^2.1.3",
