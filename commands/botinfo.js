@@ -14,7 +14,7 @@ module.exports = {
             .setDescription(
                 'Here’s more Info About Me! (so you can hack me and do illegal things)\n\n' +
                     '**Name** = AlphaBot\n' +
-                    `**Version** = 2.00\n` +
+                    `**Version** = 2.01\n` +
                     '**Description** = this is bot, do things with bot, do `.help` for help (with bot obv)\n' +
                     '**Code Language** = JavaScript(.js) with the Node.js Framework\n' +
                     `**Discord.js Version** = ${version}\n` +
