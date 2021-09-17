@@ -26,4 +26,4 @@ client.config = require("./config/config.json");
 // Initializing the project
 require("./handler")(client);
 
-client.login(client.config.token);
+client.login(process.env.ALPHABOT_DJS_TOKEN);
