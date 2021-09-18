@@ -1,8 +1,7 @@
-# **AlphaBot**
+# **Alpha**
+A multipurpose, open-source and simplistic discord bot.
 
-Hello, this is Alpha's Home. Feel free to browse code and support this repo.
-
-# Some of the Commands
+# Features
 
 **Utility Commands:**
 
@@ -18,6 +17,11 @@ Bigword command enlarges your text
 
 Giveaway commands to host amazing giveaways in your server
 
-#
 
-And so many more!
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

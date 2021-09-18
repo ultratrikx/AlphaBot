@@ -11,7 +11,7 @@
     "start": "node index.js"
   },
   "author": "ultratrikx#2605",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
     "@sourcebin/linguist": "^0.0.3",
