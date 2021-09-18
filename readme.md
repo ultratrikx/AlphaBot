@@ -29,5 +29,3 @@ Give a ⭐️ if this project helped you!
 
 Copyright © 2021 [Rohanth Marem](https://github.com/ultratrikx).<br />
 This project is [MIT](https://github.com/ultratrikx/AlphaBot/blob/main/license.txt) licensed.
-
-***
