@@ -1,27 +1,33 @@
-# **Alpha**
-A multipurpose, open-source and simplistic discord bot.
+<h1 align="center">Welcome to Alpha 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-3.00-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/ultratrikx/AlphaBot/blob/main/license.txt" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-# Features
+> A multipurpose, open-source and simplistic discord bot.
 
-**Utility Commands:**
+### 🏠 [Homepage](https://github.com/ultratrikx/AlphaBot/tree/main)
 
-Weather command to check the weather of any location
+## Author
 
-Covid commands to check the cases, deaths and recoveries of any location
+👤 **Rohanth Marem**
 
-Math command to do math on the spot
+* Website: https://github.com/ultratrikx
+* Github: [@ultratrikx](https://github.com/ultratrikx)
 
-**Fun Commands:**
+## 🤝 Contributing
 
-Bigword command enlarges your text
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. <br />Feel free to check the [issues page](https://github.com/ultratrikx/AlphaBot/issues). 
 
-Giveaway commands to host amazing giveaways in your server
+## Show your support
 
+Give a ⭐️ if this project helped you!
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## 📝 License
 
-Please make sure to update tests as appropriate.
+Copyright © 2021 [Rohanth Marem](https://github.com/ultratrikx).<br />
+This project is [MIT](https://github.com/ultratrikx/AlphaBot/blob/main/license.txt) licensed.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+***
