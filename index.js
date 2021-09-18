@@ -16,4 +16,16 @@ client.config = require("./config/config.json");
 // Initializing the project
 require("./handler")(client);
 
+client.once('ready', () => {
+    console.log('RPC Set');
+    client.user.setPresence({
+        status: 'dnd', //You can show online, idle... Do not disturb is dnd
+
+        activity: {
+            name: '.help', // The message shown
+            type: 'LISTENING', // PLAYING, WATCHING, LISTENING, STREAMING,
+        },
+    });
+});
+
 client.login(process.env.ALPHABOT_DJS_TOKEN);
