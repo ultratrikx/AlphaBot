@@ -718,6 +718,7 @@ module.exports = {
                                 embeds: embeds,
                                 channel: interaction.channel,
                                 author: interaction.user,
+                                time: 10000,
                                 fastSkip: true,
                                 pageTravel: true,
                             });
