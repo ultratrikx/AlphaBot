@@ -3,6 +3,9 @@
   "version": "3.0.0",
   "description": "official release of the alphabot",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "test": "nodemon index.js",
     "start": "node index.js"
