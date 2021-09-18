@@ -28,7 +28,8 @@ module.exports = {
                     '**Bot User** = Alpha Bot#0038\n' +
                     '**Bot Owner** = ultratrikx#2605\n' +
                     /* **Bot Token** = ||<a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200><a:rollrick:795716484068147200>||\n' +*/
-                    '**Github** = https://github.com/ultratrikx/AlphaBot \n\n' +
+                    '**Github** = https://github.com/ultratrikx/AlphaBot \n' +
+                    '**Website** = https://ultratrikx.github.io/AlphaBot/ \n\n' +
                     'Hosted on Heroku',
             )
 

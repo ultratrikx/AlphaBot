@@ -8,7 +8,7 @@
 
 > A multipurpose, open-source and simplistic discord bot.
 
-### 🏠 [Homepage](https://github.com/ultratrikx/AlphaBot/tree/main)
+### 🏠 [Homepage](https://ultratrikx.github.io/AlphaBot/)
 
 ## Author
 
