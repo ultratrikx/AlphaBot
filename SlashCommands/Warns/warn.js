@@ -31,7 +31,7 @@ module.exports = {
 
         new warnModel({
             userId: user.id,
-            guildId: guild.id,
+            guildId: interaction.guildId,
             moderatorId: interaction.user.id,
             reason,
             timestamp: Date.now(),
