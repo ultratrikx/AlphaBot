@@ -1,18 +1,18 @@
 const warnModel = require('../../models/warnModel')
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { SlashCommandBuilder } = require('@discordjs/builders')
+
 
 module.exports = {
-    name: 'remove-warn',
-    description: 'remove a user\s warnings',
-    userPermissions: ['MANAGE_MESSAGES'],
-    options: [
-        {
-            name: 'warnid',
-            description: 'warnId you want to delete',
-            type: STRING,
-            required: true,
-        },
-    ],
+    ...new SlashCommandBuilder()
+        .setName('remove-warn')
+        .setDescription('removes a user\s warning')
+        .addStringOption(option => 
+            option
+                .setName('warnid')
+                .setDescription('warnId of the warning to be remove')
+                .setRequired(true)
+        ),
 
     /**
      *
