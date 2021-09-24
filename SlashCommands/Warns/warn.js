@@ -9,13 +9,13 @@ module.exports = {
         {
             name: 'target',
             description: 'user you want to warn',
-            type: USER,
+            type: 'USER',
             required: true,
         },
         {
             name: "reason",
             description: 'reason for the warn',
-            type: STRING,
+            type: 'STRING',
             required: true,
         }
     ],

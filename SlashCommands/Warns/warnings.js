@@ -9,7 +9,7 @@ module.exports = {
         {
             name: 'target',
             description: 'user you want to warnings for',
-            type: USER,
+            type: 'USER',
             required: true,
         },
     ],
