@@ -23,7 +23,11 @@ module.exports = {
         const warnId = interaction.options.getString('warnid')
         const data = await warnModel.findById(warnId)
 
-        if(!data) return interaction.followUp({content: `warn id is not valid`})
+        if(!data) 
+            return interaction.followUp({
+                content: `warn id is not valid`
+            })
+        data.delete();
 
         const user = interaction.guild.members.cache.get(data.userId)
         return interaction.followUp({content: `removed 1 of ${user}'s warnings`})
