@@ -1,5 +1,5 @@
 const { Client, Collection } = require("discord.js");
-
+//const token = require("./config/config.json")
 const client = new Client({
     intents: 32767,
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],

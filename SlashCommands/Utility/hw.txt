@@ -1,0 +1,20 @@
+const { SlashCommandBuilder } = require('@discordjs/builders')
+const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+
+module.exports = {
+    ...new SlashCommandBuilder()
+        .setName('hw')
+        .setDescription('find out your homework for the day'),
+
+
+
+    /**
+     *
+     * @param {Client} client
+     * @param {CommandInteraction} interaction
+     * @param {String[]} args
+     */
+    run: async (client, interaction, args) => {
+        interaction.followUp({ content: 'CONTENT'})
+    },
+};
