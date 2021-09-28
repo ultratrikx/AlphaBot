@@ -15,6 +15,7 @@
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
     "@sourcebin/linguist": "^0.0.3",
+    "ansi-regex": "^6.0.1",
     "discord.js": "^13.1.0",
     "figlet": "^1.5.2",
     "glob": "^7.1.7",

@@ -1,2 +1,4 @@
 node_modules
 /.DS_Store 
+/models/homeworkModel.js
+/SlashCommands/Utility/postHomework.js
