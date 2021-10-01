@@ -15,12 +15,7 @@ client.config = require("./config/config.json");
 
 // Initializing the project
 require("./handler")(client);
-new Presence(client, {
-    activity: {
-            name: 'test', // The message shown
-            type: 'WATCHING', // PLAYING, WATCHING, LISTENING, STREAMING,
-    },
-});
+
 
 client.once('ready', () => {
     console.log('RPC Set');
