@@ -15,7 +15,7 @@ client.config = require("./config/config.json");
 
 // Initializing the project
 require("./handler")(client);
-new Discord.Presence(client, {
+new Presence(client, {
     activity: {
             name: 'test', // The message shown
             type: 'WATCHING', // PLAYING, WATCHING, LISTENING, STREAMING,
