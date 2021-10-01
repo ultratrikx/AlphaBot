@@ -1,4 +1,4 @@
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, Presence } = require("discord.js");
 //const token = require("./config/config.json")
 const client = new Client({
     intents: 32767,
@@ -15,15 +15,20 @@ client.config = require("./config/config.json");
 
 // Initializing the project
 require("./handler")(client);
+new Discord.Presence(client, {
+    activity: {
+            name: 'test', // The message shown
+            type: 'WATCHING', // PLAYING, WATCHING, LISTENING, STREAMING,
+    },
+});
 
 client.once('ready', () => {
     console.log('RPC Set');
     client.user.setPresence({
         status: 'dnd', //You can show online, idle... Do not disturb is dnd
-
         activity: {
-            name: '.help', // The message shown
-            type: 'LISTENING', // PLAYING, WATCHING, LISTENING, STREAMING,
+            name: '', // The message shown
+            type: 'WATCHING', // PLAYING, WATCHING, LISTENING, STREAMING,
         },
     });
 });
