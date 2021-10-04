@@ -13,15 +13,19 @@ client.on("messageCreate", async (message) => {
             message.channel.send("123")
             .catch(console.error); // add error handling here
         }, 1 * 1000); 
+
+        interval
+    } else {
+        const [cmd, ...args] = message.content
+            .slice(client.config.prefix.length)
+            .trim()
+            .split(" ");
+
+        const command = client.commands.get(cmd.toLowerCase());
+
+        if (!command) return;
+        await command.run(client, message, args);
     }
-    const [cmd, ...args] = message.content
-        .slice(client.config.prefix.length)
-        .trim()
-        .split(" ");
 
-    const command = client.commands.get(cmd.toLowerCase());
-
-    if (!command) return;
-    await command.run(client, message, args);
 });
 
