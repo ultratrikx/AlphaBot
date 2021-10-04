@@ -7,7 +7,13 @@ client.on("messageCreate", async (message) => {
         !message.content.toLowerCase().startsWith(client.config.prefix)
     )
         return;
-
+    
+    if (message.content === '$ad'){
+        var interval = setInterval (function () {
+            message.channel.send("123")
+            .catch(console.error); // add error handling here
+        }, 1 * 1000); 
+    }
     const [cmd, ...args] = message.content
         .slice(client.config.prefix.length)
         .trim()
