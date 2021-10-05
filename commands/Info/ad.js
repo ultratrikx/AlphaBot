@@ -9,8 +9,8 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, message, args) => {
-        const channelToSend = client.channels.cache.get('888805141631885412') //796140427878858763
-        channelToSend.send(`https://cdn.discordapp.com/attachments/856543669938946048/895058206617911306/unnamed.gif`);
+        const channelToSend = client.channels.cache.get('796140427878858763') 
+        channelToSend.send(`Vote for Raghav Singh as Prime Minister!!\n For more info use the command /raghav_for_pm \nhttps://cdn.discordapp.com/attachments/856543669938946048/895058206617911306/unnamed.gif`);
     },
 };
 
