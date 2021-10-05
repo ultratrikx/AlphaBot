@@ -8,7 +8,7 @@ client.on("messageCreate", async (message) => {
     )
         return;
     
-    if (message.content === '$ad'){
+    if (message.content == '.ad'){
         var i = 1;                  //  set your counter to 1
         function myLoop() {         //  create a loop function
         setTimeout(function() {   //  call a 3s setTimeout when the loop is called
