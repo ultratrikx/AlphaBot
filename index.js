@@ -12,7 +12,6 @@ client.slashCommands = new Collection();
 client.config = require("./config/config.json");
 
 
-
 // Initializing the project
 require("./handler")(client);
 
