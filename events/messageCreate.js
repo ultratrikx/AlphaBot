@@ -9,12 +9,20 @@ client.on("messageCreate", async (message) => {
         return;
     
     if (message.content === '$ad'){
-        var interval = setInterval (function () {
-            message.channel.send("123")
-            .catch(console.error); // add error handling here
-        }, 1 * 1000); 
+        var i = 1;                  //  set your counter to 1
+        function myLoop() {         //  create a loop function
+        setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+            console.log('hello');   //  your code here
+            i++;                    //  increment the counter
+            if (i < 10) {           //  if the counter < 10, call the loop function
+            myLoop();             //  ..  again which will trigger another 
+            }                       //  ..  setTimeout()
+        }, 3000)
 
-        interval
+        myLoop()
+        }
+
+        myLoop();                   //  start the loop
     } else {
         const [cmd, ...args] = message.content
             .slice(client.config.prefix.length)
