@@ -17,7 +17,7 @@ client.on("messageCreate", async (message) => {
             if (i < 10) {           //  if the counter < 10, call the loop function
             myLoop();             //  ..  again which will trigger another 
             }                       //  ..  setTimeout()
-        }, 3000)
+        }, 3000*10)
 
         myLoop()
         }
