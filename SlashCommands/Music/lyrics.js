@@ -17,11 +17,12 @@ const getLyrics = (title) =>
 
 const substring = (length, value) => {
     const replaced = value.replace(/\n/g, "--");
+    const censor = replaced.replace('fuck'&&'shit', "****")
     const regex = `.{1,${length}}`;
-    const lines = replaced
+    const lines = censor
         .match(new RegExp(regex, "g"))
         .map((line) => line.replace(/--/g, "\n"));
-    const censor = value.replace('fuck'&&'shit', "****")
+
 
     return lines;
 };
