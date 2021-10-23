@@ -17,7 +17,7 @@ const getLyrics = (title) =>
 
 const substring = (length, value) => {
     const replaced = value.replace(/\n/g, "--");
-    const censor = replaced.replace('fuck'&&'shit', "****")
+    const censor = replaced.replace('fuck'&&'shit' && 'dick' && 'bitch' && 'whore' && 'nigga' && 'puss' && 'ass', "**[expletive]**")
     const regex = `.{1,${length}}`;
     const lines = censor
         .match(new RegExp(regex, "g"))
