@@ -21,6 +21,7 @@ const substring = (length, value) => {
     const lines = replaced
         .match(new RegExp(regex, "g"))
         .map((line) => line.replace(/--/g, "\n"));
+    const censor = value.replace('fuck'&&'shit', "****")
 
     return lines;
 };
