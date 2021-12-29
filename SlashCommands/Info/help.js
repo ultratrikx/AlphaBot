@@ -25,14 +25,14 @@ module.exports = {
             test: '🧪',
         };
         const directories = [
-            ...new Set(client.commands.map((cmd) => cmd.directory)),
+            ...new Set(client.SlashCommands.map((cmd) => cmd.directory)),
         ];
 
         const formatString = (str) =>
             `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
 
         const categories = directories.map((dir) => {
-            const getCommands = client.commands
+            const getCommands = client.SlashCommands
                 .filter((cmd) => cmd.directory === dir)
                 .map((cmd) => {
                     return {
