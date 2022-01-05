@@ -31,9 +31,8 @@ module.exports = {
                 console.dir(err);
             }
             if (data.length > 2000)
-                return message.channel.send(
-                    'Please provide text shorter than 2000 characters',
-                );
+                return interaction.followUp(
+                   { content: 'Please provide text shorter than 2000 characters'});
 
             interaction.followUp({ content: '```' + data + '```' });
         });

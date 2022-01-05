@@ -25,7 +25,7 @@ module.exports = {
             test: '🧪',
         };
         const directories = [
-            ...new Set(client.commands.map((cmd) => cmd.directory)),
+            ...new Set(client.slashscommands.map((cmd) => cmd.directory)),
         ];
 
         const formatString = (str) =>
