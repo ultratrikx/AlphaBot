@@ -32,7 +32,7 @@ module.exports = {
             `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
 
         const categories = directories.map((dir) => {
-            const getCommands = client.commands
+            const getCommands = client.SlashCommands
                 .filter((cmd) => cmd.directory === dir)
                 .map((cmd) => {
                     return {
